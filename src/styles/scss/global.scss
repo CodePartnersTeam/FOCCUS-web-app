@@ -1,0 +1,10 @@
+@import "reset", "variables", "decorators";
+
+html {
+  // font-size: 62.5%; // 10px
+}
+
+body {
+  font-family: $font-inter, sans-serif;
+  font-weight: 400;
+}
