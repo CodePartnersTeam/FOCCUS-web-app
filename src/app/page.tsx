@@ -29,8 +29,10 @@ export default function LoginPage() {
 							ALGUN PROBLEMA?
 							<span className="decorator line" />
 						</h3>
+						<div className={style.bntActions}>
 						<button type="button">Solicitar soporte</button>
 						<button type="button">Resetear contraseña</button>
+						</div>
 					</div>
 				</article>
 			</section>
