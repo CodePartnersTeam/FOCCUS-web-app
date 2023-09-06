@@ -28,8 +28,13 @@
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
+    "postcss": "^8.4.29",
     "prettier": "^3.0.3",
+    "prettier-plugin-css-order": "^2.0.0",
     "standard": "^17.1.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-plugin-defensive-css": "^0.8.1",
     "typescript": "5.2.2"
   }
 }
