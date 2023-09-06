@@ -4,6 +4,7 @@
 + Rome | https://marketplace.visualstudio.com/items?itemName=rome.rome 
 + Better Comments | https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
 + Auto Barrel | https://marketplace.visualstudio.com/items?itemName=mikehanson.auto-barrel
++ Style Lint | https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 
 #### Optional
 + Import Cost | https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost
