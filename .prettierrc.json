@@ -8,5 +8,8 @@
   "arrowParens": "avoid",
   "quoteProps": "consistent",
   "printWidth": 140,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "plugins": [
+    "prettier-plugin-css-order"
+  ]
 }
