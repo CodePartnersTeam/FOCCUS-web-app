@@ -1,0 +1,18 @@
+@mixin only-desktop {
+	@media only screen and (width < 1024px) {
+		body {
+			* {
+				display: none !important;
+			}
+
+			&::before {
+				display: grid;
+				place-items: center;
+				width: 100vw;
+				height: 100vh;
+				content: 'Este sitio solo es accesible en computadoras';
+				font-size: 3rem;
+			}
+		}
+	}
+}

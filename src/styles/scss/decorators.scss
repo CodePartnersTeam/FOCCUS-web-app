@@ -1,0 +1,14 @@
+.decorator {
+  display: flex;
+  height: 100%;
+  &.line {
+    background-color: $color-platinum;
+    height: 1px;
+    margin: auto 0;
+    width: 100%;
+  }
+  &.zig-zag {
+    background-image: url("/decorators/zigzag.png");
+    height: 20px;
+  }
+}

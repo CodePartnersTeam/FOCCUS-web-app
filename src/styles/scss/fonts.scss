@@ -1,0 +1,32 @@
+:is(p, a, label, i, b, blockquote, span, li, input, button, div) {
+	font-size: 1.4rem;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+	font-family: $font-inter;
+}
+
+h1 {
+	font-weight: 700; // bold
+	font-size: 3rem;
+}
+
+h2 {
+	font-weight: 700; // bold
+	font-size: 2.4rem;
+}
+
+h3 {
+	font-weight: 600; // semi bold
+	font-size: 2rem;
+}
+
+h4 {
+	font-weight: 500; // medium
+	font-size: 1.6rem;
+}
+
+h5 {
+	font-weight: 500; // medium
+	font-size: 1.4rem;
+}

@@ -1,0 +1,16 @@
+@import 'reset', 'defensive', 'variables', 'breakpoints', 'decorators';
+@import 'fonts';
+@include only-desktop;
+
+html {
+	font-size: 62.5%; // 10px
+}
+
+body {
+	font-weight: 400;
+	font-family: $font-inter;
+}
+
+:is(button, input[type="submit"]) {
+	cursor: pointer;
+}

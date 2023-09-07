@@ -1,0 +1,15 @@
+{
+  "useTabs": true,
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "quoteProps": "consistent",
+  "printWidth": 140,
+  "trailingComma": "none",
+  "plugins": [
+    "prettier-plugin-css-order"
+  ]
+}
