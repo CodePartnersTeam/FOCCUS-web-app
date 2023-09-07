@@ -1,5 +1,5 @@
 'use client'
-import React, { useState }  from 'react'
+import React, { useState } from 'react'
 import style from './page.module.scss'
 import { Credentials } from '@/models'
 
@@ -11,7 +11,7 @@ export default function LoginForm() {
 
 	const handlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setLoginData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-		console.log(loginData);
+		console.log(loginData)
 	}
 
 	return (
@@ -34,7 +34,7 @@ export default function LoginForm() {
 					ALGUN PROBLEMA?
 					<span className='decorator line' />
 				</h3>
-				<div className={style.bntActions}>
+				<div className={style['btn-actions']}>
 					<button type='button'>Solicitar soporte</button>
 					<button type='button'>Resetear contraseña</button>
 				</div>

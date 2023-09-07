@@ -5,7 +5,7 @@ import LoginForm from './loginForm'
 
 export default function LoginPage() {
 	return (
-		<main id={style.loginPage}>
+		<main id={style['login-page']}>
 			<section className={style.banner}>
 				<blockquote>“Observa el mundo con ojos nuevos, enfocate en lo que realmente importa.”</blockquote>
 			</section>
