@@ -7,9 +7,9 @@
       true,
       {
         "accidental-hover": true,
-        "background-repeat": true,
+        "background-repeat": false,
         "custom-property-fallbacks": true,
-        "flex-wrapping": true,
+        "flex-wrapping": false,
         "scroll-chaining": true,
         "vendor-prefix-grouping": true
       }
