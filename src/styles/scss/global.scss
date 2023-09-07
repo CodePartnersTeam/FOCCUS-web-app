@@ -10,3 +10,7 @@ body {
 	font-weight: 400;
 	font-family: $font-inter;
 }
+
+:is(button, input[type="submit"]) {
+	cursor: pointer;
+}
