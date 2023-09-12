@@ -1,11 +1,17 @@
-import { inter, montserrat, montserrat_alternates } from '@/fonts'
+import React from 'react'
+
+import { Header } from '@/components/Header'
+import { inter, montserrat, montserratAlternates } from '@/fonts'
 import '@/styles/global.scss'
 import '@/styles/index.scss'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="es" className={`${inter.variable} ${montserrat.variable} ${montserrat_alternates.variable}`}>
-			<body>{children}</body>
+		<html lang='es' className={`${inter.variable} ${montserrat.variable} ${montserratAlternates.variable}`}>
+			<body>
+				<Header />
+				{children}
+			</body>
 		</html>
 	)
 }
