@@ -1,14 +1,16 @@
 .decorator {
-  display: flex;
-  height: 100%;
-  &.line {
-    background-color: $color-platinum;
-    height: 1px;
-    margin: auto 0;
-    width: 100%;
-  }
-  &.zig-zag {
-    background-image: url("/decorators/zigzag.png");
-    height: 20px;
-  }
+	display: flex;
+	height: 100%;
+
+	&.line {
+		margin: auto 0;
+		background-color: $color-platinum;
+		width: 100%;
+		height: 0.0625rem;
+	}
+
+	&.zig-zag {
+		background-image: url('/decorators/zigzag.png');
+		height: 20px;
+	}
 }
