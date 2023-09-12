@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import LogoFoccus from 'public/logos/LogoFoccus.png'
+import LogoFoccus from 'public/images/logos/LogoFoccus.png'
 import style from './page.module.scss'
 import LoginForm from './loginForm'
 

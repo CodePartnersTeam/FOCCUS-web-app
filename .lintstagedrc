@@ -1,8 +1,5 @@
 {
-  "*.{js,jsx,ts,tsx}": [
-    "eslint"
-  ],
-  "*.{css,scss,sass}": [
-    "pnpm stylelint */"
-  ]
+	"**.*": ["prettier --write"],
+	"*.{css,scss,sass}": ["pnpm stylelint */"],
+	"*.{js,jsx,ts,tsx}": ["eslint"]
 }

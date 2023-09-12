@@ -14,11 +14,11 @@ const montserrat = Montserrat({
 	variable: '--font-montserrat'
 })
 
-const montserrat_alternates = MontserratAlternates({
+const montserratAlternates = MontserratAlternates({
 	subsets: ['latin'],
 	display: 'swap',
 	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 	variable: '--font-montserrat-alternate'
 })
 
-export { inter, montserrat, montserrat_alternates }
+export { inter, montserrat, montserratAlternates }
