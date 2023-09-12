@@ -1,21 +1,17 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss"
-  ],
-  "rules": {
-    "plugin/use-defensive-css": [
-      true,
-      {
-        "accidental-hover": true,
-        "background-repeat": false,
-        "custom-property-fallbacks": true,
-        "flex-wrapping": false,
-        "scroll-chaining": true,
-        "vendor-prefix-grouping": true
-      }
-    ]
-  },
-  "plugins": [
-    "stylelint-plugin-defensive-css"
-  ]
+	"extends": ["stylelint-config-standard-scss"],
+	"rules": {
+		"plugin/use-defensive-css": [
+			true,
+			{
+				"accidental-hover": false,
+				"background-repeat": false,
+				"custom-property-fallbacks": true,
+				"flex-wrapping": false,
+				"scroll-chaining": true,
+				"vendor-prefix-grouping": true
+			}
+		]
+	},
+	"plugins": ["stylelint-plugin-defensive-css"]
 }
