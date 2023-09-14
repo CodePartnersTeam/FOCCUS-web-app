@@ -32,9 +32,18 @@ dependencies:
   sass:
     specifier: ^1.66.1
     version: 1.66.1
+  sonner:
+    specifier: ^0.7.1
+    version: 0.7.1(react-dom@18.2.0)(react@18.2.0)
+  swr:
+    specifier: ^2.2.2
+    version: 2.2.2(react@18.2.0)
   valibot:
     specifier: ^0.13.1
     version: 0.13.1
+  zod:
+    specifier: ^3.22.2
+    version: 3.22.2
   zustand:
     specifier: ^4.4.1
     version: 4.4.1(@types/react@18.2.21)(react@18.2.0)
@@ -3695,6 +3704,16 @@ packages:
       is-fullwidth-code-point: 4.0.0
     dev: true
 
+  /sonner@0.7.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: { integrity: sha512-awbVcBwV0xV5TN7kJEZv6Sx7Fi9JBL26vTn0FnBcf6YsyWKnyvz16I/jE6omCtBjd0/YXsPHJ//VuA5fvD2vEg== }
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /source-map-js@1.0.2:
     resolution: { integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw== }
     engines: { node: '>=0.10.0' }
@@ -4027,6 +4046,16 @@ packages:
     resolution: { integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA== }
     dev: true
 
+  /swr@2.2.2(react@18.2.0):
+    resolution: { integrity: sha512-CbR41AoMD4TQBQw9ic3GTXspgfM9Y8Mdhb5Ob4uIKXhWqnRLItwA5fpGvB7SmSw3+zEjb0PdhiEumtUvYoQ+bQ== }
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
   /table@6.8.1:
     resolution: { integrity: sha512-Y4X9zqrCftUhMeH2EptSSERdVKt/nEdijTOacGD/97EKjhQ/Qs8RTlEGABSJNNN8lac9kheH+af7yAkEWlgneA== }
     engines: { node: '>=10.0.0' }
@@ -4338,6 +4367,10 @@ packages:
 
   /zod@3.21.4:
     resolution: { integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw== }
+    dev: false
+
+  /zod@3.22.2:
+    resolution: { integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg== }
     dev: false
 
   /zustand@4.4.1(@types/react@18.2.21)(react@18.2.0):

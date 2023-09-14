@@ -1,14 +1,4 @@
 {
-	"name": "dashboard.foccus.co",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"prepare": "husky install"
-	},
 	"dependencies": {
 		"@radix-ui/colors": "^2.1.0",
 		"@radix-ui/react-avatar": "^1.0.3",
@@ -19,7 +9,10 @@
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"sass": "^1.66.1",
+		"sonner": "^0.7.1",
+		"swr": "^2.2.2",
 		"valibot": "^0.13.1",
+		"zod": "^3.22.2",
 		"zustand": "^4.4.1"
 	},
 	"devDependencies": {
@@ -41,5 +34,15 @@
 		"stylelint-config-standard-scss": "^11.0.0",
 		"stylelint-plugin-defensive-css": "^0.8.1",
 		"typescript": "5.2.2"
-	}
+	},
+	"name": "dashboard.foccus.co",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev",
+		"lint": "next lint",
+		"prepare": "husky install",
+		"start": "next start"
+	},
+	"version": "0.1.0"
 }
