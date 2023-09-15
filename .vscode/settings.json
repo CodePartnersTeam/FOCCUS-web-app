@@ -5,6 +5,7 @@
 	},
 	"editor.cursorBlinking": "expand",
 	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.stickyScroll.enabled": true,
 	"editor.tabSize": 2,
 	"explorer.fileNesting.enabled": true,
