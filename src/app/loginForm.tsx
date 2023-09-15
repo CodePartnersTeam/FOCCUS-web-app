@@ -1,36 +1,29 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import style from './page.module.scss'
 import { Credentials, credentialsDefaultValue } from '@/models'
-import { z } from 'zod'
+import { useRouter } from 'next/navigation'
+import { login } from '@/services/Login'
+import React, { useState } from 'react'
+import style from './page.module.scss'
 import { toast } from 'sonner'
 
-const regex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g
-
-const loginSchema = z.object({
-	username: z.string().min(5),
-	password: z.string().min(8).regex(regex)
-})
-
 export default function LoginForm() {
-	const [loginData, setLoginData] = useState<Credentials>(credentialsDefaultValue)
+	const router = useRouter()
 
-	const handlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setLoginData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+	const [credentials, setCredentials] = useState<Credentials>(credentialsDefaultValue)
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setCredentials(prev => ({ ...prev, [e.target.name]: e.target.value }))
 	}
 
-	useEffect(() => console.log(loginData), [loginData]) // Delete
-
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		const result = loginSchema.safeParse(loginData)
-
-		if (!result.success) {
-			toast.error('Usuario o Contraseña incorrecto')
-			// return
+		try {
+			const { message } = await login(credentials)
+			toast.success(`Bienvenido ${message}`)
+			router.push('/vision general')
+		} catch (err: any) {
+			toast.error(err.message)
 		}
-
-		// TODO: Apllied endpoint Login
 	}
 
 	return (
@@ -39,11 +32,11 @@ export default function LoginForm() {
 			<form onSubmit={handleSubmit}>
 				<label>
 					Ingrese su usuario
-					<input type='text' name='username' placeholder='oliviaaroud123' autoFocus={true} onChange={handlerChange} />
+					<input type='text' name='username' placeholder='oliviaaroud123' autoFocus={true} onChange={handleChange} />
 				</label>
 				<label>
 					Ingrese su contraseña
-					<input type='password' name='password' placeholder='*******' onChange={handlerChange} />
+					<input type='password' name='password' placeholder='*******' onChange={handleChange} />
 				</label>
 				<input type='submit' value='Iniciar Sesion' />
 			</form>
@@ -58,31 +51,6 @@ export default function LoginForm() {
 					<button type='button'>Resetear contraseña</button>
 				</div>
 			</div>
-			{/* <div>{error ? 'failed to load' : data}</div> */}
 		</article>
 	)
 }
-
-// const fetcher = async (url: string, data: {
-// 	"username": "LuisCarlos",
-// 	"password": "iaASA123#"
-// }) => {
-// 	const response = await fetch(url, {
-// 		method: 'POST',
-// 		body: JSON.stringify(data),
-// 		headers: {
-// 			"content-type": "application/json"
-// 		}
-// 	}
-
-// 	)
-
-// 	if (!response.ok) {
-// 		throw new Error('Error al iniciar sesión');
-// 	}
-
-// 	const responseData = await response.json();
-// 	console.log(responseData)
-// 	return responseData
-
-// }
