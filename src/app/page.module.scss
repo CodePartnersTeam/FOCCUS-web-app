@@ -60,6 +60,10 @@ main#login-page {
 					}
 				}
 
+				&.error label input {
+					border-color: red;
+				}
+
 				input[type='submit'] {
 					margin: 0 auto;
 					border: none;

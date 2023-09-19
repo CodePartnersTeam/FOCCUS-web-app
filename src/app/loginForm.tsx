@@ -11,6 +11,8 @@ export default function LoginForm() {
 
 	const [credentials, setCredentials] = useState<Credentials>(credentialsDefaultValue)
 
+	const [error, setError] = useState(false)
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setCredentials(prev => ({ ...prev, [e.target.name]: e.target.value }))
 	}
@@ -23,13 +25,14 @@ export default function LoginForm() {
 			router.push('/vision general')
 		} catch (err: any) {
 			toast.error(err.message)
+			setError(true)
 		}
 	}
 
 	return (
 		<article className={style['form-container']}>
 			<h2>Inicia Sesion en FOCCUS</h2>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} className={`${error ? style.error : undefined}`}>
 				<label>
 					Ingrese su usuario
 					<input type='text' name='username' placeholder='oliviaaroud123' autoFocus={true} onChange={handleChange} />
