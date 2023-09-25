@@ -1,0 +1,105 @@
+@import '@styles/abstracts/variables';
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid $color-platinum;
+	padding-inline: 25px;
+	height: 64px;
+
+	.nav-bar {
+		ul {
+			display: flex;
+			flex-direction: row;
+			gap: 25px;
+
+			li {
+				a {
+					color: $color-gray-dim;
+					font-weight: 500; // semi bold
+					text-transform: capitalize;
+
+					&:hover {
+						color: $color-black;
+					}
+
+					&.current-page {
+						color: $color-corporate-first;
+						font-weight: 700; // bold
+					}
+				}
+			}
+		}
+	}
+
+	.user-actions {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+
+		.avatar-container {
+			width: 40px;
+			height: 40px;
+		}
+
+		.notification {
+			display: grid;
+			position: relative;
+			place-items: center;
+			background-image: url('/icons/bell.svg');
+			width: 24px;
+			height: 24px;
+			overflow: hidden;
+
+			&::before {
+				content: '+99';
+				font-size: 6px;
+			}
+
+			&::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: -1;
+				margin-top: 1px;
+				margin-right: 1px;
+				content: '🔴';
+				font-size: 5px;
+			}
+		}
+	}
+}
+
+.dropdown {
+	margin-right: 25px;
+	border: 1px solid $color-platinum;
+	border-radius: 6px;
+	background-color: $color-white;
+	padding: 4px;
+
+	.username {
+		padding: 6px 0;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	.item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+		border-radius: 3px;
+		padding: 6px 12px;
+
+		&:hover {
+			background-color: $color-white-smoke;
+		}
+
+		.icon {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
