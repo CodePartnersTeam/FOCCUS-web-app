@@ -1,4 +1,4 @@
-@import '@/styles/variables', '@/styles/decorators';
+@import '@styles/abstracts/variables';
 
 main#login-page {
 	display: grid;
@@ -29,6 +29,8 @@ main#login-page {
 			position: absolute;
 			top: 0;
 			right: 0;
+			width: 8rem;
+			height: 1.875rem;
 		}
 
 		.form-container {
@@ -64,7 +66,7 @@ main#login-page {
 					border-color: red;
 				}
 
-				input[type='submit'] {
+				button[type='submit'] {
 					margin: 0 auto;
 					border: none;
 					border-radius: 6px;
@@ -103,7 +105,7 @@ main#login-page {
 				button {
 					border: none;
 					background-color: transparent;
-					font-size: 1.2rem;
+					font-size: 0.8em;
 					font-family: $font-montserrat-alternate;
 				}
 			}
