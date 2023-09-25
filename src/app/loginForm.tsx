@@ -1,40 +1,73 @@
 'use client'
+
+import { loginService } from '@/modules/Session/infrastructure'
+import { Credentials, credentialsDefaultValue } from '@/modules/_shared/User'
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
-import style from './page.module.scss'
-import { Credentials } from '@/models'
+import { toast } from 'sonner'
+
+import s from './login.module.scss'
 
 export default function LoginForm() {
-	const [loginData, setLoginData] = useState<Credentials>({
-		username: '',
-		password: ''
-	})
+	const [credentials, setCredentials] = useState<Credentials>(credentialsDefaultValue)
+	const [error, setError] = useState(false)
+	const [loading, setLoading] = useState(false)
 
-	const handlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setLoginData(prev => ({ ...prev, [e.target.name]: e.target.value }))
-		console.log(loginData)
+	const router = useRouter()
+
+	function changeCredentials(e: React.ChangeEvent<HTMLInputElement>) {
+		e.preventDefault()
+		setError(false)
+		setCredentials(prevCredentials => ({ ...prevCredentials, [e.target.name]: e.target.value }))
+	}
+
+	async function submitCredentials(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault()
+		setLoading(true)
+		await loginService(credentials)
+			.then(() => router.push('/vision general'))
+			.catch(err => toast.error(err.message))
+			.finally(() => setLoading(false))
 	}
 
 	return (
-		<article className={style['form-container']}>
+		<article className={s['form-container']}>
 			<h2>Inicia Sesion en FOCCUS</h2>
-			<form>
+			<form className={`${error ? s.error : undefined}`} onSubmit={e => e.preventDefault()}>
 				<label>
 					Ingrese su usuario
-					<input type='text' name='username' placeholder='oliviaaroud123' autoFocus={true} onChange={handlerChange} />
+					<input
+						id='username'
+						type='text'
+						name='username'
+						autoFocus={true}
+						placeholder='oliviaaroud123'
+						autoComplete='username'
+						onChange={changeCredentials}
+					/>
 				</label>
 				<label>
 					Ingrese su contraseña
-					<input type='password' name='password' placeholder='******* ' onChange={handlerChange} />
+					<input
+						id='password'
+						type='password'
+						name='password'
+						placeholder='*******'
+						autoComplete='current-password'
+						onChange={changeCredentials}
+					/>
 				</label>
-				<input type='submit' value='Iniciar Sesion' />
+				<button type='submit' onClick={submitCredentials}>
+					{!loading ? 'Iniciar Sesion' : 'Cargando...'}
+				</button>
 			</form>
-			<div className={style.actions}>
+			<div className={s.actions}>
 				<h3>
 					<span className='decorator line' />
 					ALGUN PROBLEMA?
 					<span className='decorator line' />
 				</h3>
-				<div className={style['btn-actions']}>
+				<div className={s['btn-actions']}>
 					<button type='button'>Solicitar soporte</button>
 					<button type='button'>Resetear contraseña</button>
 				</div>

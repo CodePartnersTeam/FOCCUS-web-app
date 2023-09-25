@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/* Fonts */
+$font-inter: var(--font-inter, sans-serif);
+$font-montserrat: var(--font-montserrat, sans-serif);
+$font-montserrat-alternate: var(--font-montserrat-alternate, sans-serif);
+
+// * COLORS
+
+/* Corporate */
+$color-corporate-first: #365b6d;
+$color-corporate-second: #f2f1ec;
+$color-corporate-third: #41c1ba;
+$color-corporate-fourth: #6c9286;
+$color-corporate-fifth: #289dd2;
+
+/* Gray scale  */
+$color-white: #fff;
+$color-white-smoke: #f4f4f4;
+$color-platinum: #e4e4e4;
+$color-gray-dim: #6a6a6a;
+$color-black: #060606;
+$color-blue-black: #10002e;
+$color-light-gray: #d5d4dc;
+
+/* Other colors */
+$color-red: #eb001b;

@@ -16,7 +16,14 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "hexagonal-architecture"
     ],
-    "rules": {}
+    "rules": {},
+    "overrides": [{
+        "files": ["./src/modules/**/*.ts"],
+        "rules": {
+          "hexagonal-architecture/enforce": ["error"]
+        }
+      }]
 }

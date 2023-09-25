@@ -12,6 +12,9 @@ const nextConfig = {
 				hostname: '*'
 			}
 		]
+	},
+	async redirects() {
+		return [{ source: '/vision%20general', destination: '/vision_general', permanent: true }]
 	}
 }
 
