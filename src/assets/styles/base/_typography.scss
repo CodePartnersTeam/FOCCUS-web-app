@@ -1,5 +1,13 @@
+/**
+ * Basic typography style for copy text
+**/
+
+body {
+	font-family: $font-inter;
+}
+
 :is(p, a, label, i, b, blockquote, span, li, input, button, div) {
-	font-size: 1.4rem;
+	font-size: 1em;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -8,25 +16,25 @@
 
 h1 {
 	font-weight: 700; // bold
-	font-size: 3rem;
+	font-size: 3em;
 }
 
 h2 {
 	font-weight: 700; // bold
-	font-size: 2.4rem;
+	font-size: 2.4em;
 }
 
 h3 {
 	font-weight: 600; // semi bold
-	font-size: 2rem;
+	font-size: 2em;
 }
 
 h4 {
 	font-weight: 500; // medium
-	font-size: 1.6rem;
+	font-size: 1.6em;
 }
 
 h5 {
 	font-weight: 500; // medium
-	font-size: 1.4rem;
+	font-size: 1.4em;
 }

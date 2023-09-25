@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/* Mixin Flexbox */
+@mixin flex($direction, $wrap, $justify, $align) {
+	display: flex;
+	flex-flow: $direction $wrap;
+	justify-content: $just;
+	align-items: $align;
+}
+
+/* Mixin Grid */
+@mixin grid($cols, $rows, $space) {
+	display: grid;
+	grid-template-columns: $cols;
+	gap: $space;
+}
