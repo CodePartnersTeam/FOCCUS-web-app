@@ -4,12 +4,21 @@
   "bracketSpacing": true,
   "jsxSingleQuote": true,
   "plugins": [
-    "prettier-plugin-css-order"
+    "prettier-plugin-css-order",
+    "@trivago/prettier-plugin-sort-imports"
   ],
-  "printWidth": 140,
+  "printWidth": 120,
   "quoteProps": "consistent",
   "semi": false,
   "singleQuote": true,
   "trailingComma": "none",
-  "useTabs": true
+  "useTabs": true,
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@internal/(.*)$",
+    "^[./].*(?<!\\.(c|le|sc)ss)$",
+    "^[.]/[-a-zA-Z0-9_]+[.](module)[.](css|scss|less)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
