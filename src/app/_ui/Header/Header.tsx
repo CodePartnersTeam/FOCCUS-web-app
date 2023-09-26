@@ -13,12 +13,14 @@ import { MAINROUTES } from '@routes'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import React from 'react'
 
+import { Avatar } from '../Avatar'
 import { userActions } from './userActions'
 
 import style from './Header.module.scss'
 
-export default function Header() {
+export function Header() {
 	const pathname = usePathname()
 
 	const isCurrentPage = (route: string) => {
@@ -45,7 +47,7 @@ export default function Header() {
 				{/* Dropdown User Actions */}
 				<Root>
 					<Trigger>
-						<div className={style['avatar-container']}>{/* <Avatar /> */}</div>
+						<Avatar src='/images/avatar_test.svg' size='md' name='Antonio Cabrales' />
 					</Trigger>
 					<Content className={style.dropdown} sideOffset={5}>
 						<Title className={style.username}>{'{Nombre del usuario}'}</Title>
