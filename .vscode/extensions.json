@@ -15,6 +15,7 @@
         "formulahendry.auto-rename-tag",
         "vincaslt.highlight-matching-tag",
         "richie5um2.vscode-sort-json",
-        "aykutsarac.jsoncrack-vscode"
+        "aykutsarac.jsoncrack-vscode",
+        "vivaxy.vscode-conventional-commits"
     ]
 }
