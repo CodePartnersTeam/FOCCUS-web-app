@@ -1,14 +1,5 @@
-import { Session, SessionDTO } from '../domain'
+import { Session, SessionDTO } from '@shared/Session/domain'
 
-export async function sessionAdapter(session: SessionDTO) {
-	const formattedSession: Session = {
-		token: session.token,
-		user: {
-			id: session.userFound.id,
-			name: session.userFound.name,
-			role: session.role
-		}
-	}
-
-	return formattedSession
+export function sessionAdapter(session: SessionDTO): Session {
+	return session.token
 }
