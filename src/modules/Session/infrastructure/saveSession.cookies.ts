@@ -1,7 +1,6 @@
+import { Session } from '@shared/Session/domain'
 import Cookies from 'js-cookie'
 
-import { Session } from '../domain'
-
-export function saveSessionCookies(session: Session) {
-	Cookies.set('sesion', JSON.stringify(session))
+export function saveSessionInCookies(session: Session) {
+	Cookies.set('session', JSON.stringify(session))
 }
