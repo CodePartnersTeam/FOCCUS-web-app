@@ -11,23 +11,24 @@
 		"noEmit": true,
 		"paths": {
 			"@/*": ["./src/*"],
-			"@middlewares": ["./src/config/middlewares"],
-			"@ui/*": ["./src/app/_ui/*"],
-			"@fonts": ["./src/assets/fonts"],
-			"@styles/*": ["./src/assets/styles/*"],
-			"@modules/*": ["./src/modules/_shared/*"],
 			"@common/*": ["./src/common/*"],
+			"@fonts": ["./src/assets/fonts"],
+			"@middlewares": ["./src/config/middlewares"],
+			"@modules/*": ["./src/modules/*"],
+			"@providers": ["./src/config/providers"],
 			"@routes": ["./src/config/routes"],
-			"@providers": ["./src/config/providers"]
+			"@shared/*": ["./src/modules/_shared/*"],
+			"@styles/*": ["./src/assets/styles/*"],
+			"@ui/*": ["./src/app/_ui/*"]
 		},
-		"skipLibCheck": true,
-		"strict": true,
-		"resolveJsonModule": true,
 		"plugins": [
 			{
 				"name": "next"
 			}
-		]
+		],
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true
 	},
 	"exclude": ["node_modules"],
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

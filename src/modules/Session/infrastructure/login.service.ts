@@ -1,13 +1,16 @@
 import Http from '@/config/interceptors/axios.interceptor'
-import { Credentials, credentialsIsValid } from '@modules/User'
+import { Credentials, credentialsIsValid } from '@shared/User'
+import { userAdapter } from '@shared/User/application'
+import { saveUserInLocalStorage } from '@shared/User/infraestructure'
 
-import { saveSessionCookies } from '.'
+import { saveSessionInCookies } from '.'
 import { sessionAdapter } from '../application'
 
 export async function loginService(credentials: Credentials) {
 	if (credentialsIsValid(credentials)) {
-		const session = await Http.post('/auth/login', credentials).then(({ data }) => sessionAdapter(data))
-		saveSessionCookies(session)
+		const { data: sessionDTO } = await Http.post('/auth/login', credentials)
+		saveSessionInCookies(sessionAdapter(sessionDTO))
+		saveUserInLocalStorage(userAdapter(sessionDTO))
 		return
 	}
 
