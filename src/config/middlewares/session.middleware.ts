@@ -1,4 +1,3 @@
-import { getAuthorization } from '@/common/logic'
 import { API, ROUTES } from '@routes'
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -8,7 +7,7 @@ export async function sessionMiddleware(request: NextRequest) {
 		const token = JSON.parse(session?.value)
 		const { status } = await fetch(`${API}/auth/validate/session`, {
 			headers: {
-				Authorization: getAuthorization()
+				Authorization: `Bearer ${token}`
 			}
 		})
 
