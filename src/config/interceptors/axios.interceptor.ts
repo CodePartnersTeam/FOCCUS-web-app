@@ -5,7 +5,7 @@ import { toast } from 'sonner'
 import { API } from '../routes'
 
 const setAuthorizationHeaders = (req: AxiosRequestConfig) => {
-	const session = localStorage.getItem('sesion')
+	const session = localStorage.getItem('session')
 
 	if (session) {
 		const { token } = JSON.parse(session)
