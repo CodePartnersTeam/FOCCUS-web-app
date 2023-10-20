@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
 
 export function removeSessionCookie() {
-	Cookies.remove('sesion')
+	Cookies.remove('session')
 }

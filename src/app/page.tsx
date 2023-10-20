@@ -9,7 +9,7 @@ import style from './login.module.scss'
 
 export default function LoginPage() {
 	// Obtenemos la sesion de las cookies de los headers
-	const session = cookies().get('sesion')?.value
+	const session = cookies().get('session')?.value
 
 	if (session !== undefined) {
 		/**
