@@ -1,4 +1,4 @@
-import { getValidationError } from '@common/logic/getError'
+import { getValidationError } from '@/common/utils/getError.util'
 import axios, { AxiosRequestConfig } from 'axios'
 import { toast } from 'sonner'
 
@@ -20,7 +20,7 @@ const setAuthorizationHeaders = (req: AxiosRequestConfig) => {
 
 const Http = axios.create({ baseURL: API })
 
-Http.interceptors.request.use(req => setAuthorizationHeaders(req))
+Http.interceptors.request.use((req): any => setAuthorizationHeaders(req))
 
 Http.interceptors.response.use(
 	res => {
