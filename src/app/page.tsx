@@ -1,24 +1,10 @@
-import { ROUTES } from '@routes'
-import { cookies } from 'next/headers'
 import Image from 'next/image'
-import { redirect } from 'next/navigation'
 
 import LoginForm from './loginForm'
 
 import style from './login.module.scss'
 
 export default function LoginPage() {
-	// Obtenemos la sesion de las cookies de los headers
-	const session = cookies().get('session')?.value
-
-	if (session !== undefined) {
-		/**
-		 * const { token } = JSON.parse(session)
-		 * TODO: Comprobar si el token es valido antes de redirigir, en caso que no. Eliminar sesion.
-		 */
-		return redirect(ROUTES.LANDING)
-	}
-
 	return (
 		<main id={style['login-page']}>
 			<section className={style.banner}>
