@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
 
 		throw new Error('Sesion no encontrada en el Navegador')
 	} catch (reason: any) {
-		console.log('❗', reason.message, '\n', pathname)
+		console.log('❗', 'middleware:', reason.message, '\n', pathname)
 		if (pathname === ROUTES.LOGIN) return NextResponse.next()
 
 		const NewNextResponse: any = NextResponse
@@ -38,6 +38,13 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-	// * Se deben excluir todos los archivos estaticos
-	matcher: ['/', '/((?!api|_next/static|_next/image|images|icons|favicon.ico).*)']
+	/*
+	 * Coincide con todas las rutas de petición excepto las que empiezan por:
+	 * - api (rutas API)
+	 * _next/static (archivos estáticos)
+	 * _next/image (archivos de optimización de imágenes)
+	 * favicon.ico (archivo favicon)
+	 * Se excluyen todos los archivos ubicados en public
+	 */
+	matcher: ['/', '/((?!api|_next/static|_next/image|images|icons|fonts|videos|favicon.ico).*)']
 }
