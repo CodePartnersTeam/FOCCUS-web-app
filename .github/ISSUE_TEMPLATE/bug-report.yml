@@ -2,7 +2,7 @@ name: Reporta un bug o inconsistencia
 description: Informa de un bug o inconsistencia en la aplicacion
 title: "🐛 "
 labels: ["🐛 bug"]
-projects: ["FOCCUS"]
+projects: ["CodePartnersTeam/1"]
 body:
   - type: markdown
     attributes:
