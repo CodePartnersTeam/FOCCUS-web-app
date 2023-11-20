@@ -1,0 +1,62 @@
+emoji = true
+autocomplete = true
+
+[[commit_types]]
+name = "feat"
+emoji = "✨"
+description = "Nueva característica"
+
+[[commit_types]]
+name = "fix"
+emoji = "🐛"
+description = "Corrección de errores"
+
+[[commit_types]]
+name = "docs"
+emoji = "📝"
+description = "Cambios en la documentación"
+
+[[commit_types]]
+name = "style"
+emoji = "💄"
+description = "Cambios que no afectan al sentido del código"
+
+[[commit_types]]
+name = "refactor"
+emoji = "♻️"
+description = "Cambios de código que no corrigen errores ni añaden nueva funcionalidad."
+
+[[commit_types]]
+name = "remove"
+emoji = "🧹"
+description = "Se elimina codigo o archivos"
+
+[[commit_types]]
+name = "perf"
+emoji = "⚡"
+description = "Cambios de código que mejora el rendimiento"
+
+[[commit_types]]
+name = "test"
+emoji = "✅"
+description = "Añade tests o correge los existentes"
+
+[[commit_types]]
+name = "build"
+emoji = "📦"
+description = "Cambios que afectan al sistema de compilación o a dependencias externas"
+
+[[commit_types]]
+name = "ci"
+emoji = "🤖"
+description = "Cambios en nuestros archivos de configuración y scripts de CI"
+
+[[commit_types]]
+name = "chore"
+emoji = "⭕"
+description = "Otros cambios que no modifican los archivos de src o de test"
+
+[[commit_types]]
+name = "revert"
+emoji = "⏪"
+description = "Anula una confirmación anterior"
