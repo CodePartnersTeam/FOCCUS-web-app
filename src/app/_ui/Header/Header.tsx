@@ -58,7 +58,7 @@ export function Header() {
 						{/* Notification Container */}
 						<GroupActions className={style['notifications-items']}>
 							{userNoti.slice(0, 5).map(notification => (
-								<NotificationItem key={notification.ticket} {...notification} />
+								<NotificationItem disabled={{ seen: false }} key={notification.ticket} {...notification} />
 							))}
 						</GroupActions>
 						{/* Actions */}

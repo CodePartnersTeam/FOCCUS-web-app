@@ -7,10 +7,12 @@ interface NotificationDTO {
 	title: string
 	description: string
 	ticket: string
-	seen: boolean | string
+	disabled: {
+		seen: boolean
+	}
 }
 
-export function NotificationItem({ timestamp, title, description, ticket, seen }: NotificationDTO) {
+export function NotificationItem({ timestamp, title, description, ticket, disabled }: NotificationDTO) {
 	function formatearFecha(timestamp: string) {
 		const fecha = new Date(timestamp)
 		const mes = fecha.toLocaleString('en-us', { month: 'short' })
@@ -25,9 +27,11 @@ export function NotificationItem({ timestamp, title, description, ticket, seen }
 	return (
 		<article className={styles['card-container']}>
 			<section className={styles['left-side']}>
-				<span className={`${styles.timestamp} ${seen === true ? styles.seen : ''}`}>{formatearFecha(timestamp)}</span>
-				<h4 className={`${styles.title} ${seen === true ? styles.seen : ''}`}>{title}</h4>
-				<p className={`${styles.description} ${seen === true ? styles.seen : ''}`}>{description}</p>
+				<span className={`${styles.timestamp} ${disabled.seen === true ? styles.seen : ''}`}>
+					{formatearFecha(timestamp)}
+				</span>
+				<h4 className={`${styles.title} ${disabled.seen === true ? styles.seen : ''}`}>{title}</h4>
+				<p className={`${styles.description} ${disabled.seen === true ? styles.seen : ''}`}>{description}</p>
 			</section>
 			<section className={styles['right-side']}>
 				{/* TODO:  implemetar Componente de Ellipses */}
@@ -41,7 +45,7 @@ export function NotificationItem({ timestamp, title, description, ticket, seen }
 						<GroupActions>{'Opciones'}</GroupActions>
 					</Content>
 				</Root>
-				<p className={`${styles.ticket} ${seen === true ? styles.seen : ''}`}>Ticket: {ticket}</p>
+				<p className={`${styles.ticket} ${disabled.seen === true ? styles.seen : ''}`}>Ticket: {ticket}</p>
 			</section>
 		</article>
 	)
