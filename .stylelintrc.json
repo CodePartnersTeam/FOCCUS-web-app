@@ -11,7 +11,8 @@
 				"scroll-chaining": true,
 				"vendor-prefix-grouping": true
 			}
-		]
+		],
+		"color-function-notation" :"legacy"
 	},
 	"plugins": ["stylelint-plugin-defensive-css"]
 }

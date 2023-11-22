@@ -1,0 +1,56 @@
+name: Nuevo componente o vista
+description: Desarrollar un nuevo componente o vista
+title: "✨ "
+labels: ["✨ característica"]
+projects: ["CodePartnersTeam/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Por favor, rellene las siguientes secciones para describir correctamente la nueva caracteristica.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe las caracteristica o requerimientos
+      value: |
+        Deben cumplirse los siguientes requerimientos
+
+        **Props**
+        <!-- Añade las Props que debe recibir y manejar el componente o vista -->
+        <!-- En formato "bullet list o task list o solo texto" -->
+        - [ ] **`nameOfProp:`**
+
+        **Logica**
+        <!-- Añade la logica que debe hacerse -->
+        <!-- En formato "bullet list o task list o solo texto" -->
+
+        **Otros**
+        <!-- Añade otros tipos de requerimiento a cumplir. ejp. implementaciones -->
+        <!-- En formato "bullet list o task list o solo texto" -->
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots_of_use
+    attributes:
+      label: 📥 Ejemplos de uso
+      value: |
+        <!-- Se recomienda usar www.ray.so para esto -->
+    validations:
+      required: true
+  - type: textarea
+    id: visual-examples
+    attributes:
+      label: 👁️ Ejemplos visuales
+      value: |
+        <!-- Se recomienda usar www.ray.so para esto -->
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Debe implementarse porque (opcional)
+      placeholder: Permitirá hacer X que se necesita en Y
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por mejorar la aplicacion!
