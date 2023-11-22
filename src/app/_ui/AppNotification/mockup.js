@@ -3,7 +3,10 @@ export const userNoti = [
 		timestamp: '2023-11-14T16:14:15.726Z',
 		title: 'Notification 1',
 		description: 'This is notification 1',
-		ticket: '1'
+		ticket: '1',
+		disabled: {
+			seen: true
+		}
 	},
 	{
 		timestamp: '2023-11-15T06:50:42.109Z',

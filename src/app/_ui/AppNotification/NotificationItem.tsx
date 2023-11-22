@@ -1,5 +1,7 @@
 import { Content, Group as GroupActions, Root, Separator, Label as Title, Trigger } from '@radix-ui/react-dropdown-menu'
 
+import { Ticket } from '../Ticket'
+
 import styles from './NotificationItem.module.scss'
 
 interface NotificationDTO {
@@ -45,7 +47,9 @@ export function NotificationItem({ timestamp, title, description, ticket, disabl
 						<GroupActions>{'Opciones'}</GroupActions>
 					</Content>
 				</Root>
-				<p className={`${styles.ticket} ${disabled.seen === true ? styles.seen : ''}`}>Ticket: {ticket}</p>
+				<div className={`${styles.ticket} ${disabled.seen === true ? styles.seen : ''}`}>
+					<Ticket name='ref' value={ticket} />
+				</div>
 			</section>
 		</article>
 	)
