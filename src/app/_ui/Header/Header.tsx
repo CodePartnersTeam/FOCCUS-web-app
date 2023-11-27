@@ -58,7 +58,12 @@ export function Header() {
 						{/* Notification Container */}
 						<GroupActions className={style['notifications-items']}>
 							{userNoti.slice(0, 5).map(notification => (
-								<NotificationItem disabled={{ seen: false }} key={notification.ticket} {...notification} />
+								<NotificationItem
+									key={notification.ticket}
+									numberOfTicket={notification.ticket}
+									disabled={notification?.seen}
+									{...notification}
+								/>
 							))}
 						</GroupActions>
 						{/* Actions */}
@@ -82,7 +87,7 @@ export function Header() {
 						<Separator />
 						<GroupActions>
 							{userActions.map(({ type, icon, service }) => (
-								<Action key={type} className={style.item} onClick={service}>
+								<Action key={type} className={style.item} onClick={event => service(event)}>
 									<Image width={24} height={24} src={`/icons/${icon}`} alt='Log out' className={style.icon} />
 									{type}
 								</Action>
