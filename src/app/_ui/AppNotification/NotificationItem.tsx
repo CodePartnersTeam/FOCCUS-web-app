@@ -1,21 +1,20 @@
 import { Content, Group as GroupActions, Root, Separator, Label as Title, Trigger } from '@radix-ui/react-dropdown-menu'
+import cn from 'classnames'
 
-import { Ticket } from '../Ticket'
+import { Ticket, type TicketValue } from '../Ticket'
 
 import styles from './NotificationItem.module.scss'
 
-interface NotificationDTO {
-	timestamp: string
+interface NotificationItemProps {
+	timestamp: Date
 	title: string
 	description: string
-	ticket: string
-	disabled: {
-		seen: boolean
-	}
+	numberOfTicket: TicketValue
+	disabled?: boolean
 }
 
-export function NotificationItem({ timestamp, title, description, ticket, disabled }: NotificationDTO) {
-	function formatearFecha(timestamp: string) {
+export function NotificationItem({ timestamp, title, description, numberOfTicket, disabled }: NotificationItemProps) {
+	function formatearFecha(timestamp: Date) {
 		const fecha = new Date(timestamp)
 		const mes = fecha.toLocaleString('en-us', { month: 'short' })
 		const dia = fecha.getDate()
@@ -27,13 +26,11 @@ export function NotificationItem({ timestamp, title, description, ticket, disabl
 	}
 
 	return (
-		<article className={styles['card-container']}>
+		<article className={cn(styles['card-container'], disabled && styles.seen)}>
 			<section className={styles['left-side']}>
-				<span className={`${styles.timestamp} ${disabled.seen === true ? styles.seen : ''}`}>
-					{formatearFecha(timestamp)}
-				</span>
-				<h4 className={`${styles.title} ${disabled.seen === true ? styles.seen : ''}`}>{title}</h4>
-				<p className={`${styles.description} ${disabled.seen === true ? styles.seen : ''}`}>{description}</p>
+				<span className={`${styles.timestamp}`}>{formatearFecha(timestamp)}</span>
+				<h4 className={`${styles.title}`}>{title}</h4>
+				<p className={`${styles.description}`}>{description}</p>
 			</section>
 			<section className={styles['right-side']}>
 				{/* TODO:  implemetar Componente de Ellipses */}
@@ -47,8 +44,8 @@ export function NotificationItem({ timestamp, title, description, ticket, disabl
 						<GroupActions>{'Opciones'}</GroupActions>
 					</Content>
 				</Root>
-				<div className={`${styles.ticket} ${disabled.seen === true ? styles.seen : ''}`}>
-					<Ticket name='ref' value={ticket} />
+				<div className={`${styles.ticket}`}>
+					<Ticket name='ref' value={numberOfTicket} />
 				</div>
 			</section>
 		</article>
