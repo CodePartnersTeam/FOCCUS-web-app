@@ -15,9 +15,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-import { NotificationItem } from '../AppNotification/NotificationItem'
+import { NotificationCenter } from '../AppNotification/NotificationCenter.component'
 import { Avatar } from '../Avatar'
-import { userNoti } from './../AppNotification/mockup'
 import { userActions } from './userActions'
 
 import style from './Header.module.scss'
@@ -44,39 +43,8 @@ export function Header() {
 				</ul>
 			</nav>
 			<div className={style['user-actions']}>
-				{/* Dropdown Notification Center */}
-				<Root>
-					<Trigger>
-						<div className={style.notification}></div>
-					</Trigger>
-					<Content className={style['notification-dropdown']} align='end'>
-						{/* Title */}
-						<Title className={style.title}>
-							<h3>+99</h3>
-							<p>Notificaciones pendientes</p>
-						</Title>
-						{/* Notification Container */}
-						<GroupActions className={style['notifications-items']}>
-							{userNoti.slice(0, 5).map(notification => (
-								<NotificationItem
-									key={notification.ticket}
-									numberOfTicket={notification.ticket}
-									disabled={notification?.seen}
-									{...notification}
-								/>
-							))}
-						</GroupActions>
-						{/* Actions */}
-						<GroupActions className={style.actions}>
-							<button type='button' className={style['delete-all']}>
-								Borrar todo
-							</button>
-							<button type='button' className={style['view-all']}>
-								Ver todo
-							</button>
-						</GroupActions>
-					</Content>
-				</Root>
+				{/* Notification Center */}
+				<NotificationCenter />
 				{/* Dropdown User Actions */}
 				<Root>
 					<Trigger>
