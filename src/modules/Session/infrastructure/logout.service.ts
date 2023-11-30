@@ -1,7 +1,7 @@
 import Http from '@/config/interceptors/axios.interceptor'
+import { deleteUserInLocalStorage } from '@/modules/_shared/User/infrastructure'
 import { getAuthorization } from '@common/utils'
 import { ROUTES } from '@routes'
-import { deleteUserInLocalStorage } from '@shared/User/infraestructure/'
 
 import { removeSessionCookie } from './removeSession.cookie'
 
