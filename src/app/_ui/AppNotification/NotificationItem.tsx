@@ -6,7 +6,7 @@ import { Ticket, type TicketValue } from '../Ticket'
 import styles from './NotificationItem.module.scss'
 
 interface NotificationItemProps {
-	timestamp: Date
+	timestamp: Date | string
 	title: string
 	description: string
 	numberOfTicket: TicketValue
@@ -14,7 +14,7 @@ interface NotificationItemProps {
 }
 
 export function NotificationItem({ timestamp, title, description, numberOfTicket, disabled }: NotificationItemProps) {
-	function formatearFecha(timestamp: Date) {
+	function formatearFecha(timestamp: Date | string) {
 		const fecha = new Date(timestamp)
 		const mes = fecha.toLocaleString('en-us', { month: 'short' })
 		const dia = fecha.getDate()
@@ -44,9 +44,7 @@ export function NotificationItem({ timestamp, title, description, numberOfTicket
 						<GroupActions>{'Opciones'}</GroupActions>
 					</Content>
 				</Root>
-				<div className={`${styles.ticket}`}>
-					<Ticket name='ref' value={numberOfTicket} />
-				</div>
+				<Ticket name='ref' value={numberOfTicket} />
 			</section>
 		</article>
 	)
