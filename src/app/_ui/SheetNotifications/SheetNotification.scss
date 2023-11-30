@@ -1,0 +1,108 @@
+@import '@styles/abstracts/variables';
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
+
+.dialog-overlay {
+	display: flex;
+	position: fixed;
+	backdrop-filter: blur(10px);
+	inset: 0;
+	background-color: rgb(255, 255, 255, 25%);
+}
+
+.dialog-content {
+	display: flex;
+	position: fixed;
+	top: 0;
+	right: 0;
+	flex-direction: column;
+	gap: 15px;
+	box-shadow: -1px 0 4px 0 rgba(0, 0, 0, 10%);
+	border-radius: 6px;
+	background-color: white;
+	padding: 24px 16px;
+	width: 20.0625rem;
+	max-width: 28.125rem;
+	height: 100vh;
+}
+
+.dialog-content:focus {
+	outline: none;
+}
+
+.title-and-checkbox-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dialog-title {
+	color: #000;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: normal;
+	font-family: $font-inter;
+}
+
+.dialog-description {
+	margin: 10px 0;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.checkbox-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.checkbox-root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0.5px solid #000;
+	border-radius: 2px;
+	background-color: white;
+	width: 10px;
+	height: 10px;
+}
+
+.label {
+	color: #000;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 10px;
+	line-height: normal;
+}
+
+.icon-button {
+	display: inline-flex;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+	width: 25px;
+	height: 25px;
+	color: --$color-black;
+}
+
+.notification-list {
+	display: flex;
+	flex: 1;
+	padding: 10px 10px 5px 0;
+	overflow-y: auto;
+	overscroll-behavior: smooth;
+}
+
+.notification-list-inner {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+	max-height: 100vh;
+}
