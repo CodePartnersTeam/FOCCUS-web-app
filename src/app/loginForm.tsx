@@ -1,5 +1,6 @@
 'use client'
 
+import { subscribeNotificationEvents } from '@/modules/NotificationsCenter/infrastructure'
 import { loginService } from '@/modules/Session/infrastructure'
 import { Credentials, credentialsDefaultValue } from '@/modules/_shared/User'
 import { useRouter } from 'next/navigation'
@@ -25,7 +26,10 @@ export default function LoginForm() {
 		e.preventDefault()
 		setLoading(true)
 		await loginService(credentials)
-			.then(() => router.push('/vision general'))
+			.then(async () => {
+				subscribeNotificationEvents()
+				router.push('/vision general')
+			})
 			.catch(err => toast.error(err.message))
 			.finally(() => setLoading(false))
 	}
@@ -33,7 +37,7 @@ export default function LoginForm() {
 	return (
 		<article className={s['form-container']}>
 			<h2>Inicia Sesion en FOCCUS</h2>
-			<form className={`${error ? s.error : undefined}`} onSubmit={e => e.preventDefault()}>
+			<form className={`${error ? s.error : undefined}`} onSubmit={submitCredentials}>
 				<label>
 					Ingrese su usuario
 					<input
@@ -57,9 +61,7 @@ export default function LoginForm() {
 						onChange={changeCredentials}
 					/>
 				</label>
-				<button type='submit' onClick={submitCredentials}>
-					{!loading ? 'Iniciar Sesion' : 'Cargando...'}
-				</button>
+				<button type='submit'>{!loading ? 'Iniciar Sesion' : 'Cargando...'}</button>
 			</form>
 			<div className={s.actions}>
 				<h3>
