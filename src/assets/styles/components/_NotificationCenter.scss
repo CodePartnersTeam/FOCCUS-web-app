@@ -1,3 +1,31 @@
+.notification-center {
+	.bell {
+		display: grid;
+		position: relative;
+		place-items: center;
+		background-image: url('/icons/bell.svg');
+		width: 24px;
+		height: 24px;
+		overflow: hidden;
+
+		&::before {
+			content: '+99';
+			font-size: 6px;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: -1;
+			margin-top: 1px;
+			margin-right: 1px;
+			content: '🔴';
+			font-size: 5px;
+		}
+	}
+}
+
 .notification-toast-container {
 	display: inline-flex;
 	justify-content: flex-end;
