@@ -2,6 +2,6 @@
 
 import { Toaster } from 'sonner'
 
-export default function ToasterComponent() {
-	return <Toaster richColors closeButton />
+export function ToasterComponent() {
+	return <Toaster richColors closeButton visibleToasts={9} position='bottom-center' />
 }
