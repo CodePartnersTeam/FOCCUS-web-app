@@ -16,6 +16,8 @@ export interface NotificationEventDTO {
 export interface NotificationEvent {
 	ticket: string
 	category: string
+	title: string
+	description: string
 	seen: boolean
 	timestamp: Date
 	data: ResponseNotificationEvent
