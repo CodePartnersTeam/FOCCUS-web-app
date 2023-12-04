@@ -15,8 +15,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-import { NotificationCenter } from '../AppNotification/NotificationCenter.component'
 import { Avatar } from '../Avatar'
+import { NotificationDropdown } from '../NotificationCenter/components/Notification.Dropdown'
 import { userActions } from './userActions'
 
 import style from './Header.module.scss'
@@ -44,7 +44,7 @@ export function Header() {
 			</nav>
 			<div className={style['user-actions']}>
 				{/* Notification Center */}
-				<NotificationCenter />
+				<NotificationDropdown />
 				{/* Dropdown User Actions */}
 				<Root>
 					<Trigger>
