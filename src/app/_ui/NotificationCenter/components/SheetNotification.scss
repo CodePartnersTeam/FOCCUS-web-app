@@ -1,0 +1,96 @@
+@import '@styles/abstracts/variables';
+@import '@radix-ui/colors/black-alpha.css';
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/violet.css';
+
+.notifications-sheet-overlay {
+	display: flex;
+	position: fixed;
+	backdrop-filter: blur(10px);
+	inset: 0;
+	background-color: rgb(255, 255, 255, 25%);
+}
+
+.notifications-sheet-content {
+	display: flex;
+	position: fixed;
+	top: 0;
+	right: 0;
+	flex-direction: column;
+	gap: 15px;
+	box-shadow: -1px 0 4px 0 rgba(0, 0, 0, 10%);
+	border-radius: 6px;
+	background-color: white;
+	padding: 24px 16px;
+	width: fit-content;
+	height: 100vh;
+}
+
+.notifications-sheet-content:focus {
+	outline: none;
+}
+
+.notifications-sheet-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-self: stretch;
+
+	.checkbox-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		.checkbox {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 0.5px solid #000;
+			border-radius: 0.125em;
+			background-color: white;
+			width: 0.5em;
+			height: 0.5em;
+
+			&[data-state='checked'] {
+				background-color: $color-black;
+			}
+
+			.checkbox-indicator {
+				color: $color-white;
+			}
+		}
+
+		label {
+			color: #000;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 0.5em;
+			line-height: normal;
+			font-family: $font-lexend;
+		}
+	}
+}
+
+.notifications-sheet-notification-list {
+	display: flex;
+	flex: 1 0 0;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 15px;
+	overflow-y: auto;
+	overscroll-behavior: smooth;
+}
+
+.close-button {
+	display: inline-flex;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+	width: 25px;
+	height: 25px;
+	color: $color-black;
+}

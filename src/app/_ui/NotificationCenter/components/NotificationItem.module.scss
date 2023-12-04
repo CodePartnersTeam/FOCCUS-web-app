@@ -1,0 +1,94 @@
+@import '@styles/abstracts/variables';
+
+.card-container {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.875rem;
+	width: 100%;
+
+	&.seen {
+		opacity: 0.4;
+	}
+
+	.left-side {
+		display: flex;
+		flex: 1 0 0;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2px;
+		width: 100%;
+		max-width: 250px;
+
+		// TODO: Eliminar al implementar el componente TimeStamp
+		.timestamp {
+			color: var(--color-gray-scale-dim-gray, #6a6a6a);
+			font-style: normal;
+			font-weight: 500;
+			font-size: 0.9em;
+			line-height: normal;
+			font-family: $font-montserrat-alternate;
+		}
+
+		.title {
+			color: #000;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 1.125rem;
+			line-height: normal;
+			font-family: $font-inter;
+		}
+
+		.description {
+			color: #000;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 0.875rem;
+			line-height: normal;
+			font-family: $font-inter;
+
+			// TODO: Implementar mixin line clamp
+			-webkit-line-clamp: 2;
+			display: -webkit-box;
+			overflow: hidden;
+			-webkit-box-orient: vertical;
+		}
+	}
+
+	.right-side {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-end;
+		align-self: stretch;
+
+		// TODO eliminar al implementar el componente ellipses
+		.ellipses {
+			display: grid;
+			place-items: center;
+			width: 1.125rem;
+			height: 1.125rem;
+
+			img {
+				width: 14px;
+				height: 5px;
+			}
+		}
+	}
+}
+
+.dropdown {
+	margin-right: 25px;
+	border: 1px solid $color-platinum;
+	border-radius: 6px;
+	background-color: $color-white;
+	padding: 4px;
+
+	* {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		align-self: stretch;
+		gap: 5px;
+		padding: 4px;
+	}
+}
