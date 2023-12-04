@@ -1,4 +1,4 @@
-import { launchNotificacionsToast } from '@/app/_ui/AppNotification/components'
+import { launchNotificacionsToast } from '@/app/_ui/NotificationCenter'
 import { getAuthorization } from '@/common/utils'
 import { SSE } from 'sse.js'
 
@@ -43,7 +43,7 @@ export function subscribeNotificationEvents() {
 			}
 
 			localStorage.setItem('notificationscenter', JSON.stringify(notificationsToSave))
-			localStorage.setItem('dateOfLastNotificationEvent', String(newNotifications[0].timestamp))
+			localStorage.setItem('dateOfLastNotificationEvent', String(newNotifications[0]?.timestamp))
 		}
 
 		console.error('No hay nuevas notificaciones')
@@ -63,5 +63,5 @@ export function subscribeNotificationEvents() {
 	}
 
 	// ! Para modo desarrollo
-	setTimeout(() => conection.close(), 200000)
+	setTimeout(() => conection.close(), 1800000)
 }
