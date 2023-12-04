@@ -1,3 +1,4 @@
+import { getAuthorization } from '@/common/utils'
 import { getValidationError } from '@/common/utils/getError.util'
 import axios, { AxiosRequestConfig } from 'axios'
 import { toast } from 'sonner'
@@ -5,16 +6,10 @@ import { toast } from 'sonner'
 import { API } from '../routes'
 
 const setAuthorizationHeaders = (req: AxiosRequestConfig) => {
-	const session = localStorage.getItem('session')
-
-	if (session) {
-		const { token } = JSON.parse(session)
-		const newHeaders = {
-			Authorization: `Bearer ${token}`
-		}
-		req.headers = newHeaders
-		return req
+	const newHeaders = {
+		Authorization: getAuthorization()
 	}
+	req.headers = newHeaders
 	return req
 }
 
