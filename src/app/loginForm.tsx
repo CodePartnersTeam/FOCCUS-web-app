@@ -33,7 +33,7 @@ export default function LoginForm() {
 	return (
 		<article className={s['form-container']}>
 			<h2>Inicia Sesion en FOCCUS</h2>
-			<form className={`${error ? s.error : undefined}`} onSubmit={e => e.preventDefault()}>
+			<form className={`${error ? s.error : undefined}`} onSubmit={submitCredentials}>
 				<label>
 					Ingrese su usuario
 					<input
@@ -57,9 +57,7 @@ export default function LoginForm() {
 						onChange={changeCredentials}
 					/>
 				</label>
-				<button type='submit' onClick={submitCredentials}>
-					{!loading ? 'Iniciar Sesion' : 'Cargando...'}
-				</button>
+				<button type='submit'>{!loading ? 'Iniciar Sesion' : 'Cargando...'}</button>
 			</form>
 			<div className={s.actions}>
 				<h3>

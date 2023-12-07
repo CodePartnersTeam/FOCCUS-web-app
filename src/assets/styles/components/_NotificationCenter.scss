@@ -1,0 +1,55 @@
+.notification-center-trigger {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+
+	&::after {
+		display: flex;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		width: 10px;
+		height: 10px;
+		content: '🔴';
+		font-size: 10px;
+	}
+}
+
+.notification-toast-container {
+	display: inline-flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	gap: 0.5rem;
+
+	.bell {
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 2px;
+
+		.title {
+			color: #000;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 0.875rem;
+			line-height: normal;
+			font-family: $font-lexend;
+		}
+
+		.description {
+			color: #000;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 0.875rem;
+			line-height: normal;
+			font-family: $font-montserrat;
+		}
+	}
+}

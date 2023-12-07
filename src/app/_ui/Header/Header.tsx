@@ -10,6 +10,7 @@ import {
 	Trigger
 } from '@radix-ui/react-dropdown-menu'
 import { MAINROUTES } from '@routes'
+import { NotificationDropdown } from '@ui/NotificationCenter/components/Notification.Dropdown'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -42,8 +43,8 @@ export function Header() {
 				</ul>
 			</nav>
 			<div className={style['user-actions']}>
-				<div className={style.notification}></div>
-
+				{/* Notification Center */}
+				<NotificationDropdown />
 				{/* Dropdown User Actions */}
 				<Root>
 					<Trigger>
@@ -54,7 +55,7 @@ export function Header() {
 						<Separator />
 						<GroupActions>
 							{userActions.map(({ type, icon, service }) => (
-								<Action key={type} className={style.item} onClick={service}>
+								<Action key={type} className={style.item} onClick={event => service(event)}>
 									<Image width={24} height={24} src={`/icons/${icon}`} alt='Log out' className={style.icon} />
 									{type}
 								</Action>

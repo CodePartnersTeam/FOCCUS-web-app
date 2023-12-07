@@ -1,7 +1,8 @@
-import { inter, montserrat, montserratAlternates } from '@fonts'
+import { inter, lexend, montserrat, montserratAlternates } from '@fonts'
 import { Providers } from '@providers'
 import '@styles/app.scss'
 import { Header } from '@ui/Header'
+import cn from 'classnames'
 import type { Metadata } from 'next'
 import React from 'react'
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang='es' className={`${inter.variable} ${montserrat.variable} ${montserratAlternates.variable}`}>
+		<html lang='es' className={cn(inter.variable, montserrat.variable, montserratAlternates.variable, lexend.variable)}>
 			<body>
 				<Providers>
 					<Header />

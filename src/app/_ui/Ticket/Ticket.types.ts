@@ -1,4 +1,4 @@
-export type TicketValue = string | number
+export type TicketValue = string
 export type TicketName = 'ref' | 'ticket'
 
 // eslint-disable-next-line no-unused-vars

@@ -9,6 +9,6 @@ export interface Credentials {
 }
 
 export const credentialsDefaultValue: Credentials = {
-	username: 'luiscarlos',
-	password: 'iaASA123#'
+	username: '',
+	password: ''
 }

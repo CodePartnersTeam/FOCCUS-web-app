@@ -3,15 +3,16 @@
 // -----------------------------------------------------------------------------
 
 /* Mixin Flexbox */
-@mixin flex($direction, $wrap, $justify, $align) {
+@mixin flex($direction, $wrap: nowrap, $justify, $align, $space: 0) {
 	display: flex;
 	flex-flow: $direction $wrap;
-	justify-content: $just;
+	justify-content: $justify;
 	align-items: $align;
+	gap: $space;
 }
 
 /* Mixin Grid */
-@mixin grid($cols, $rows, $space) {
+@mixin grid($cols, $rows, $space: 0) {
 	display: grid;
 	grid-template-columns: $cols;
 	gap: $space;
