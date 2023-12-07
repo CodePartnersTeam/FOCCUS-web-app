@@ -1,7 +1,7 @@
 'use client'
 
 import { emitSound } from '@/common/utils'
-import { NotificationEvent } from '@/modules/NotificationsCenter/domain'
+import { NotificationEvent } from '@/features/NotificationsCenter/domain'
 import { toast } from 'sonner'
 
 import { Icon } from '../Icon'

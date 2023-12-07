@@ -1,7 +1,7 @@
+import { Header } from '@/app/components/Header'
 import { inter, lexend, montserrat, montserratAlternates } from '@fonts'
 import { Providers } from '@providers'
 import '@styles/app.scss'
-import { Header } from '@ui/Header'
 import cn from 'classnames'
 import type { Metadata } from 'next'
 import React from 'react'

@@ -1,8 +1,9 @@
 'use client'
 
+// TODO: Modularizar
 import { APPROUTES } from '@/config/routes'
-import { loginService } from '@/modules/Session/infrastructure'
-import { Credentials, credentialsDefaultValue } from '@/modules/_shared/User'
+import { loginService } from '@/features/Session/infrastructure'
+import { Credentials, credentialsDefaultValue } from '@/features/_shared/User'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'sonner'

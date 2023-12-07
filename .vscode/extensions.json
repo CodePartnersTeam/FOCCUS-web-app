@@ -1,21 +1,25 @@
 {
-    "recommendations": [
-        "cipchk.cssrem",
-        "mikehanson.auto-barrel",
-        "wallabyjs.console-ninja",
-        "pranaygp.vscode-css-peek",
-        "dbaeumer.vscode-eslint",
-        "kisstkondoros.vscode-gutter-preview",
-        "whtouche.vscode-js-console-utils",
-        "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint",
-        "aaron-bond.better-comments",
-        "mikestead.dotenv",
-        "usernamehw.errorlens",
-        "formulahendry.auto-rename-tag",
-        "vincaslt.highlight-matching-tag",
-        "richie5um2.vscode-sort-json",
-        "aykutsarac.jsoncrack-vscode",
-        "vivaxy.vscode-conventional-commits"
-    ]
+	"recommendations": [
+		"cipchk.cssrem",
+		"mikehanson.auto-barrel",
+		"wallabyjs.console-ninja",
+		"pranaygp.vscode-css-peek",
+		"dbaeumer.vscode-eslint",
+		"kisstkondoros.vscode-gutter-preview",
+		"whtouche.vscode-js-console-utils",
+		"esbenp.prettier-vscode",
+		"stylelint.vscode-stylelint",
+		"aaron-bond.better-comments",
+		"mikestead.dotenv",
+		"usernamehw.errorlens",
+		"formulahendry.auto-rename-tag",
+		"vincaslt.highlight-matching-tag",
+		"richie5um2.vscode-sort-json",
+		"aykutsarac.jsoncrack-vscode",
+		"vivaxy.vscode-conventional-commits",
+		"alefragnani.bookmarks",
+		"antfu.file-nesting",
+		"mariusalchimavicius.json-to-ts",
+		"ms-vsliveshare.vsliveshare"
+	]
 }

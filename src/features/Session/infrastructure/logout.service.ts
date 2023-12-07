@@ -1,5 +1,5 @@
 import Http from '@/config/interceptors/axios.interceptor'
-import { deleteUserInLocalStorage } from '@/modules/_shared/User/infrastructure'
+import { deleteUserInLocalStorage } from '@/features/_shared/User/infrastructure'
 import { getAuthorization } from '@common/utils'
 import { APIROUTES, APPROUTES } from '@routes'
 
