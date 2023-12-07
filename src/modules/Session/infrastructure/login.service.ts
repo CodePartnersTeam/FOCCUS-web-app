@@ -8,6 +8,7 @@ import { sessionAdapter } from '../application'
 
 export async function loginService(credentials: Credentials) {
 	if (credentialsIsValid(credentials)) {
+		// TODO: No usar interceptor
 		const { data: sessionDTO } = await Http.post('/auth/login', credentials)
 		saveSessionInCookies(sessionAdapter(sessionDTO))
 		saveUserInLocalStorage(userAdapter(sessionDTO))
