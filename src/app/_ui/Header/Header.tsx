@@ -10,13 +10,13 @@ import {
 	Trigger
 } from '@radix-ui/react-dropdown-menu'
 import { MAINROUTES } from '@routes'
+import { NotificationDropdown } from '@ui/NotificationCenter/components/Notification.Dropdown'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
 import { Avatar } from '../Avatar'
-import { NotificationDropdown } from '../NotificationCenter/components/Notification.Dropdown'
 import { userActions } from './userActions'
 
 import style from './Header.module.scss'
