@@ -1,2 +1,3 @@
-export * from './endpoints.route'
-export * from './main.route'
+export * from './API.routes'
+export * from './API_DINAMIC.routes'
+export * from './APP.routes'
