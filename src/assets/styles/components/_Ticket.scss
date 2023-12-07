@@ -15,7 +15,7 @@
 }
 
 .ticket-tooltip {
-	@include flex(column, nowrap, flex-start, center);
+	@include flex(column, nowrap, flex-start, center, 2px);
 
 	border: 1px solid hsla(0deg, 0%, 0%, 10%);
 	border-radius: 4px;
