@@ -1,22 +1,26 @@
+import { NotificationEvent } from '@/modules/NotificationsCenter/domain'
+import { getNotificationEventsFromLS } from '@/modules/NotificationsCenter/infrastructure'
 import { create } from 'zustand'
-
-import { NotificationEvent } from '../../../modules/NotificationsCenter/domain'
 
 type NotificationsCenterStore = {
 	countOfNotifications: number
-	listOfNotifications: Array<NotificationEvent>
+	notificationEvents: Array<NotificationEvent>
 	first5Notifications: Array<NotificationEvent>
-	setNotificationsCenter: (newNotifications: Array<NotificationEvent>) => void
+	updateNotificationEvents: () => void
 }
 
-export const useNotificationsCenter = create<NotificationsCenterStore>(set => ({
+export const useNotificationsCenterStore = create<NotificationsCenterStore>(set => ({
 	countOfNotifications: 0,
-	listOfNotifications: [],
+	notificationEvents: [],
 	first5Notifications: [],
-	setNotificationsCenter: localStorageNotifications =>
-		set(() => ({
-			countOfNotifications: localStorageNotifications?.length,
-			first5Notifications: localStorageNotifications?.slice(0, 5),
-			listOfNotifications: localStorageNotifications
-		}))
+	updateNotificationEvents: () =>
+		set(() => {
+			const notificationEvents = getNotificationEventsFromLS()
+
+			return {
+				countOfNotifications: notificationEvents?.length,
+				first5Notifications: notificationEvents?.slice(0, 5),
+				notificationEvents
+			}
+		})
 }))
