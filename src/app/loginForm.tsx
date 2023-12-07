@@ -1,5 +1,6 @@
 'use client'
 
+import { APPROUTES } from '@/config/routes'
 import { loginService } from '@/modules/Session/infrastructure'
 import { Credentials, credentialsDefaultValue } from '@/modules/_shared/User'
 import { useRouter } from 'next/navigation'
@@ -25,7 +26,7 @@ export default function LoginForm() {
 		e.preventDefault()
 		setLoading(true)
 		await loginService(credentials)
-			.then(() => router.push('/vision general'))
+			.then(() => router.push(APPROUTES.HOME))
 			.catch(err => toast.error(err.message))
 			.finally(() => setLoading(false))
 	}

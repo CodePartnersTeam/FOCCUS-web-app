@@ -1,16 +1,15 @@
 import Http from '@/config/interceptors/axios.interceptor'
 import { deleteUserInLocalStorage } from '@/modules/_shared/User/infrastructure'
 import { getAuthorization } from '@common/utils'
-import { ROUTES } from '@routes'
+import { APIROUTES, APPROUTES } from '@routes'
 
 import { removeSessionCookie } from './removeSession.cookie'
 
 export async function logoutService() {
-	const session = getAuthorization()
-	const res = await Http('/auth/logout', { headers: { Authorization: session } }).finally(() => {
+	const res = await Http(APIROUTES.LOGOUT, { headers: { Authorization: getAuthorization() } }).finally(() => {
 		removeSessionCookie()
 		deleteUserInLocalStorage()
-		window.location.href = ROUTES.LOGIN
+		window.location.href = APPROUTES.LOGIN
 	})
 
 	return res

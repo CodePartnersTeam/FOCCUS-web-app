@@ -1,9 +1,8 @@
 import { getAuthorization } from '@/common/utils'
 import { getValidationError } from '@/common/utils/getError.util'
+import { APIURL } from '@routes'
 import axios, { AxiosRequestConfig } from 'axios'
 import { toast } from 'sonner'
-
-import { API } from '../routes'
 
 const setAuthorizationHeaders = (req: AxiosRequestConfig) => {
 	const newHeaders = {
@@ -13,7 +12,7 @@ const setAuthorizationHeaders = (req: AxiosRequestConfig) => {
 	return req
 }
 
-const Http = axios.create({ baseURL: API })
+const Http = axios.create({ baseURL: APIURL })
 
 Http.interceptors.request.use((req): any => setAuthorizationHeaders(req))
 

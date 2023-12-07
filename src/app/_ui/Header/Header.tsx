@@ -1,5 +1,6 @@
 'use client'
 
+import { APPROUTES } from '@/config/routes'
 import {
 	Item as Action,
 	Content,
@@ -9,7 +10,6 @@ import {
 	Label as Title,
 	Trigger
 } from '@radix-ui/react-dropdown-menu'
-import { MAINROUTES } from '@routes'
 import { NotificationDropdown } from '@ui/NotificationCenter/components/Notification.Dropdown'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,6 +17,7 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 
 import { Avatar } from '../Avatar'
+import { NAVIGATIONHEADER } from './Header.navigation'
 import { userActions } from './userActions'
 
 import style from './Header.module.scss'
@@ -29,17 +30,20 @@ export function Header() {
 		else return undefined
 	}
 
-	return pathname !== '/' ? (
+	return pathname !== APPROUTES.LOGIN ? (
 		<header className={style.header}>
 			<nav className={style['nav-bar']}>
 				<ul role='list'>
-					{MAINROUTES.map(route => (
-						<li key={route}>
-							<Link href={route} className={isCurrentPage(route)}>
-								{route}
-							</Link>
-						</li>
-					))}
+					{NAVIGATIONHEADER.map((route: string) => {
+						const parsedRoutes = route.slice(1)
+						return (
+							<li key={parsedRoutes}>
+								<Link href={parsedRoutes} className={isCurrentPage(parsedRoutes)}>
+									{parsedRoutes}
+								</Link>
+							</li>
+						)
+					})}
 				</ul>
 			</nav>
 			<div className={style['user-actions']}>
