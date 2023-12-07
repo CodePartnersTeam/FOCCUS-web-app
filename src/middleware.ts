@@ -1,4 +1,4 @@
-import { API, ROUTES } from '@routes'
+import { APIROUTES, APPROUTES } from '@routes'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(request: NextRequest) {
@@ -6,10 +6,10 @@ export async function middleware(request: NextRequest) {
 	try {
 		const session = request.cookies.get('session')
 		if (session) {
-			if (pathname === ROUTES.LOGIN) return NextResponse.redirect(new URL(ROUTES.LANDING, request.url))
+			if (pathname === APPROUTES.LOGIN) return NextResponse.redirect(new URL(APPROUTES.LANDING, request.url))
 			const { value: token } = session
 
-			await fetch(`${API}/auth/validate/session`, {
+			await fetch(APIROUTES.VALIDATESESSION, {
 				headers: {
 					Authorization: `Bearer ${token}`
 				}
@@ -23,14 +23,14 @@ export async function middleware(request: NextRequest) {
 		throw new Error('Sesion no encontrada en el Navegador')
 	} catch (reason: any) {
 		console.log('❗', 'middleware:', reason.message, '\n', pathname)
-		if (pathname === ROUTES.LOGIN) return NextResponse.next()
+		if (pathname === APPROUTES.LOGIN) return NextResponse.next()
 
 		const NewNextResponse: any = NextResponse
 
 		const response = new NewNextResponse(new Blob(), {
 			cookies: request.cookies,
 			status: 307,
-			headers: { location: String(new URL(ROUTES.LOGIN, request.url)) }
+			headers: { location: String(new URL(APPROUTES.LOGIN, request.url)) }
 		})
 		response.cookies.delete('session')
 		return response

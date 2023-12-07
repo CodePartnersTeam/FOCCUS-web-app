@@ -2,6 +2,7 @@
 
 import { launchNotificacionsToast } from '@/app/_ui/NotificationCenter/notificationToast.launch'
 import { getAuthorization } from '@/common/utils'
+import { DINAMICAPIROUTES } from '@/config/routes'
 import { onReceivingMessage, saveNotificationEventsToLS } from '@/modules/NotificationsCenter/infrastructure'
 import React from 'react'
 import { SSE } from 'sse.js'
@@ -11,7 +12,7 @@ export function NotificationCenter({ children }: { children: React.ReactNode }) 
 	let RECONNECT_ATTEPMS = 0
 	const dateOfLastNotification = localStorage.getItem('dateOfLastNotificationEvent')
 
-	const conection = new SSE(`https://api-foccus.up.railway.app/sse/event/${dateOfLastNotification || 0}`, {
+	const conection = new SSE(DINAMICAPIROUTES.NOTIFICATIONEVENTS(dateOfLastNotification), {
 		headers: { Authorization: getAuthorization() }
 		// debug: true
 	})
