@@ -1,6 +1,5 @@
 'use client'
 
-import { subscribeNotificationEvents } from '@/modules/NotificationsCenter/infrastructure'
 import { loginService } from '@/modules/Session/infrastructure'
 import { Credentials, credentialsDefaultValue } from '@/modules/_shared/User'
 import { useRouter } from 'next/navigation'
@@ -26,10 +25,7 @@ export default function LoginForm() {
 		e.preventDefault()
 		setLoading(true)
 		await loginService(credentials)
-			.then(async () => {
-				subscribeNotificationEvents()
-				router.push('/vision general')
-			})
+			.then(() => router.push('/vision general'))
 			.catch(err => toast.error(err.message))
 			.finally(() => setLoading(false))
 	}
