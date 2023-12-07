@@ -1,7 +1,7 @@
-import { deleteNotificationEventByTicketService } from '@/modules/NotificationsCenter/infrastructure'
+import { Icon } from '@/app/components/Icon'
+import { Ticket, type TicketValue } from '@/app/components/Ticket'
+import { deleteNotificationEventByTicketService } from '@/features/NotificationsCenter/infrastructure'
 import * as Dropdown from '@radix-ui/react-dropdown-menu'
-import { Icon } from '@ui/Icon'
-import { Ticket, type TicketValue } from '@ui/Ticket'
 import { toast } from 'sonner'
 
 import { useNotificationsCenterStore } from '../useNotificationsCenter.store'

@@ -9,17 +9,18 @@
 		"module": "esnext",
 		"moduleResolution": "bundler",
 		"noEmit": true,
+		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"],
-			"@common/*": ["./src/common/*"],
-			"@fonts": ["./src/assets/fonts"],
-			"@middlewares": ["./src/config/middlewares"],
-			"@modules/*": ["./src/modules/*"],
-			"@providers": ["./src/config/providers"],
-			"@routes": ["./src/config/routes"],
-			"@shared/*": ["./src/modules/_shared/*"],
-			"@styles/*": ["./src/assets/styles/*"],
-			"@ui/*": ["./src/app/_ui/*"]
+			"@/*": ["src/*"],
+			"@common/*": ["src/common/*"],
+			"@fonts": ["src/assets/fonts"],
+			"@middlewares": ["src/config/middlewares"],
+			"@features*": ["src/features/*"],
+			"@providers": ["src/config/providers"],
+			"@routes": ["src/config/routes"],
+			"@shared/*": ["src/features/_shared/*"],
+			"@styles/*": ["src/assets/styles/*"],
+			"@ui/*": ["src/app/components/*"]
 		},
 		"plugins": [
 			{

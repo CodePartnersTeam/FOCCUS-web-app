@@ -9,10 +9,11 @@
 				"custom-property-fallbacks": true,
 				"flex-wrapping": false,
 				"scroll-chaining": true,
-				"vendor-prefix-grouping": true
+				"vendor-prefix-grouping": true,
+				"scrollbar-gutter": true
 			}
 		],
-		"color-function-notation" :"legacy"
+		"color-function-notation": "legacy"
 	},
 	"plugins": ["stylelint-plugin-defensive-css"]
 }

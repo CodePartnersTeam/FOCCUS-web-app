@@ -1,8 +1,8 @@
 import Http from '@/config/interceptors/axios.interceptor'
 import { APIROUTES } from '@/config/routes'
-import { saveUserInLocalStorage } from '@/modules/_shared/User/infrastructure'
-import { Credentials, credentialsIsValid } from '@shared/User'
-import { userAdapter } from '@shared/User/application'
+import { Credentials, credentialsIsValid } from '@/features/_shared/User'
+import { userAdapter } from '@/features/_shared/User/application'
+import { saveUserInLocalStorage } from '@/features/_shared/User/infrastructure'
 
 import { saveSessionInCookies } from '.'
 import { sessionAdapter } from '../application'

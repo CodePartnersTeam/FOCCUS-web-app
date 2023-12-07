@@ -1,8 +1,8 @@
 'use client'
 
 import './NotificationSheet.scss'
+import { Icon } from '@/app/components/Icon'
 import * as Dialog from '@radix-ui/react-dialog'
-import { Icon } from '@ui/Icon'
 import React from 'react'
 
 import { useNotificationsCenterStore } from '../useNotificationsCenter.store'

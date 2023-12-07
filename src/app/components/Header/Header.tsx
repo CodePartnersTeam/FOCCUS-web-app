@@ -1,5 +1,6 @@
 'use client'
 
+import { NotificationDropdown } from '@/app/components/NotificationCenter/components/Notification.Dropdown'
 import { APPROUTES } from '@/config/routes'
 import {
 	Item as Action,
@@ -10,7 +11,6 @@ import {
 	Label as Title,
 	Trigger
 } from '@radix-ui/react-dropdown-menu'
-import { NotificationDropdown } from '@ui/NotificationCenter/components/Notification.Dropdown'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

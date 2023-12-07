@@ -1,7 +1,7 @@
 'use client'
 
+import { NotificationCenter } from '@/app/components/NotificationCenter/NotificationCenter'
 import { APPROUTES } from '@routes'
-import { NotificationCenter } from '@ui/NotificationCenter/NotificationCenter'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 

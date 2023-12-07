@@ -1,4 +1,4 @@
-import { SessionDTO } from '@shared/Session/domain'
+import { SessionDTO } from '@/features/_shared/Session/domain'
 
 import { User } from '../domain'
 

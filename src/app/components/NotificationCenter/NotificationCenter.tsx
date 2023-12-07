@@ -1,9 +1,9 @@
 'use client'
 
-import { launchNotificacionsToast } from '@/app/_ui/NotificationCenter/notificationToast.launch'
+import { launchNotificacionsToast } from '@/app/components/NotificationCenter/notificationToast.launch'
 import { getAuthorization } from '@/common/utils'
 import { DINAMICAPIROUTES } from '@/config/routes'
-import { onReceivingMessage, saveNotificationEventsToLS } from '@/modules/NotificationsCenter/infrastructure'
+import { onReceivingMessage, saveNotificationEventsToLS } from '@/features/NotificationsCenter/infrastructure'
 import React from 'react'
 import { SSE } from 'sse.js'
 

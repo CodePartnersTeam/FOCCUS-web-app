@@ -1,5 +1,5 @@
-import { NotificationEvent } from '@/modules/NotificationsCenter/domain'
-import { getNotificationEventsFromLS } from '@/modules/NotificationsCenter/infrastructure'
+import { NotificationEvent } from '@/features/NotificationsCenter/domain'
+import { getNotificationEventsFromLS } from '@/features/NotificationsCenter/infrastructure'
 import { create } from 'zustand'
 
 type NotificationsCenterStore = {

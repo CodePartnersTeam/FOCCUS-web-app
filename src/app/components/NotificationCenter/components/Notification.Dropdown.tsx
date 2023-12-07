@@ -1,7 +1,7 @@
 'use client'
 
+import { Icon } from '@/app/components/Icon'
 import * as Dropdown from '@radix-ui/react-dropdown-menu'
-import { Icon } from '@ui/Icon'
 import cn from 'classnames'
 import React, { useEffect, useState } from 'react'
 

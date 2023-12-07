@@ -1,4 +1,4 @@
-import { Session } from '@shared/Session/domain'
+import { Session } from '@/features/_shared/Session/domain'
 import Cookies from 'js-cookie'
 
 export function saveSessionInCookies(session: Session) {

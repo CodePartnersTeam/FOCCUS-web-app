@@ -46,5 +46,5 @@ export const config = {
 	 * favicon.ico (archivo favicon)
 	 * Se excluyen todos los archivos ubicados en public
 	 */
-	matcher: ['/', '/((?!api|_next/static|_next/image|images|icons|fonts|videos|favicon.ico).*)']
+	matcher: ['/', '/((?!api|_next/static|_next/image|images|icons|fonts|videos|audios|favicon.ico).*)']
 }
