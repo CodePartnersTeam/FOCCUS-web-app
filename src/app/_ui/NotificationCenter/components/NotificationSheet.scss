@@ -1,0 +1,54 @@
+@import '@styles/abstracts/variables';
+
+.notifications-sheet-overlay {
+	display: flex;
+	position: fixed;
+	backdrop-filter: blur(10px);
+	inset: 0;
+	background-color: rgba(255, 255, 255, 25%);
+}
+
+.notifications-sheet-content {
+	display: flex;
+	position: fixed;
+	top: 0;
+	right: 0;
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: stretch;
+	gap: 1rem;
+	box-shadow: -1px 0 4px 0 rgba(0, 0, 0, 10%);
+	border-left: 1px solid $color-platinum;
+	border-radius: 6px;
+	background-color: $color-white;
+	padding: 1.5rem 1rem;
+	width: fit-content;
+	height: 100vh;
+
+	.title-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		align-self: stretch;
+
+		.title {
+			color: $color-black;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 1.25rem;
+			line-height: normal;
+			font-family: $font-inter;
+		}
+	}
+}
+
+.notifications-sheet-notification-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.875rem;
+
+	// TODO: Eliminar al implementar el componente ScrollBar
+	overflow-y: auto;
+	overscroll-behavior: smooth;
+}

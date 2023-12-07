@@ -1,8 +1,10 @@
+import { deleteNotificationEventByTicketService } from '@/modules/NotificationsCenter/infrastructure'
 import * as Dropdown from '@radix-ui/react-dropdown-menu'
-import cn from 'classnames'
+import { Icon } from '@ui/Icon'
+import { Ticket, type TicketValue } from '@ui/Ticket'
+import { toast } from 'sonner'
 
-import { Icon } from '../../Icon'
-import { Ticket, type TicketValue } from '../../Ticket'
+import { useNotificationsCenterStore } from '../useNotificationsCenter.store'
 
 import styles from './NotificationItem.module.scss'
 
@@ -11,10 +13,12 @@ interface NotificationItemProps {
 	title: string
 	description: string
 	numberOfTicket: TicketValue
-	disabled?: boolean
 }
 
-export function NotificationItem({ timestamp, title, description, numberOfTicket, disabled }: NotificationItemProps) {
+export function NotificationItem({ timestamp, title, description, numberOfTicket }: NotificationItemProps) {
+	const { updateNotificationEvents } = useNotificationsCenterStore()
+
+	// TODO: Elimar al implementar TimeStamp
 	function formatearFecha(timestamp: Date | string) {
 		const fecha = new Date(timestamp)
 		const mes = fecha.toLocaleString('es-co', { month: 'short' })
@@ -27,13 +31,13 @@ export function NotificationItem({ timestamp, title, description, numberOfTicket
 	}
 
 	return (
-		<article className={cn(styles['card-container'], disabled && styles.seen)}>
-			<section className={styles['left-side']}>
-				<span className={`${styles.timestamp}`}>{formatearFecha(timestamp)}</span>
+		<article className={styles['notification-center-item']}>
+			<section className={styles.info}>
+				<span className={styles.timestamp}>{formatearFecha(timestamp)}</span>
 				<h4 className={`${styles.title}`}>{title}</h4>
 				<p className={`${styles.description}`}>{description}</p>
 			</section>
-			<section className={styles['right-side']}>
+			<section className={styles.actions}>
 				{
 					// TODO:  implemetar Componente de Ellipses
 				}
@@ -43,7 +47,19 @@ export function NotificationItem({ timestamp, title, description, numberOfTicket
 					</Dropdown.Trigger>
 					<Dropdown.Content className={styles.dropdown} sideOffset={0}>
 						<Dropdown.Item asChild>
-							<button type='button'>Visto</button>
+							<button
+								type='button'
+								onClick={() =>
+									deleteNotificationEventByTicketService(numberOfTicket)
+										.then(() => {
+											updateNotificationEvents()
+											toast.success('Notificacion marcada como visto')
+										})
+										.catch(reason => toast.error(reason))
+								}
+							>
+								Visto
+							</button>
 						</Dropdown.Item>
 					</Dropdown.Content>
 				</Dropdown.Root>

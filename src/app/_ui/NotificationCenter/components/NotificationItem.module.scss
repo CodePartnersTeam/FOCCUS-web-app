@@ -1,48 +1,41 @@
 @import '@styles/abstracts/variables';
 
-.card-container {
+.notification-center-item {
 	display: flex;
 	align-items: flex-start;
-	gap: 0.875rem;
-	width: 100%;
+	gap: 0.75rem;
 
-	&.seen {
-		opacity: 0.4;
-	}
-
-	.left-side {
+	.info {
 		display: flex;
-		flex: 1 0 0;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 2px;
-		width: 100%;
-		max-width: 250px;
+		gap: 1px;
+		width: 15.625rem;
 
 		// TODO: Eliminar al implementar el componente TimeStamp
 		.timestamp {
-			color: var(--color-gray-scale-dim-gray, #6a6a6a);
+			color: $color-gray-dim;
 			font-style: normal;
 			font-weight: 500;
-			font-size: 0.9em;
+			font-size: 0.75em;
 			line-height: normal;
-			font-family: $font-montserrat-alternate;
+			font-family: $font-montserrat;
 		}
 
 		.title {
-			color: #000;
+			color: $color-black;
 			font-style: normal;
-			font-weight: 500;
-			font-size: 1.125rem;
+			font-weight: 400;
+			font-size: 0.875em;
 			line-height: normal;
-			font-family: $font-inter;
+			font-family: $font-lexend;
 		}
 
 		.description {
-			color: #000;
+			color: $color-black;
 			font-style: normal;
 			font-weight: 400;
-			font-size: 0.875rem;
+			font-size: 0.8125rem;
 			line-height: normal;
 			font-family: $font-inter;
 
@@ -54,7 +47,7 @@
 		}
 	}
 
-	.right-side {
+	.actions {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -73,22 +66,22 @@
 				height: 5px;
 			}
 		}
-	}
-}
 
-.dropdown {
-	margin-right: 25px;
-	border: 1px solid $color-platinum;
-	border-radius: 6px;
-	background-color: $color-white;
-	padding: 4px;
+		.dropdown {
+			margin-right: 25px;
+			border: 1px solid $color-platinum;
+			border-radius: 6px;
+			background-color: $color-white;
+			padding: 4px;
 
-	* {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		align-self: stretch;
-		gap: 5px;
-		padding: 4px;
+			* {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				align-self: stretch;
+				gap: 5px;
+				padding: 4px;
+			}
+		}
 	}
 }

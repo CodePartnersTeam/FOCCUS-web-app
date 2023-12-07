@@ -1,32 +1,28 @@
 'use client'
 
-import {
-	getNotificationsEventsFromLocalStorage,
-	useNotificationsCenter
-} from '@/modules/NotificationsCenter/infrastructure'
 import * as Dropdown from '@radix-ui/react-dropdown-menu'
+import { Icon } from '@ui/Icon'
 import cn from 'classnames'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { Icon } from '../../Icon'
+import { useNotificationsCenterStore } from '../useNotificationsCenter.store'
+import { NotificationItem } from './Notification.Item'
 import { NotificationSheet } from './Notification.Sheet'
-import { NotificationItem } from './NotificationItem'
 
-import style from './DropDown.module.scss'
+import style from './NotificationDropdown.module.scss'
+
+const MAX_VISIBLE_NOTIFICATIONS = 5
 
 export function NotificationDropdown() {
-	const { first5Notifications, countOfNotifications, setNotificationsCenter } = useNotificationsCenter()
+	const [isOpen, setIsOpen] = useState(false)
 
-	function handleOpenChange() {
-		setNotificationsCenter(getNotificationsEventsFromLocalStorage())
-	}
+	const { first5Notifications, countOfNotifications, updateNotificationEvents } = useNotificationsCenterStore()
 
-	// TODO: useMemo para mejorar el performance
-	// useEffect(() => console.log(first5Notifications), [first5Notifications])
+	useEffect(() => updateNotificationEvents(), [isOpen, updateNotificationEvents])
 
 	return (
-		<Dropdown.Root onOpenChange={handleOpenChange}>
-			<Dropdown.Trigger className={cn(countOfNotifications && 'notification-center-trigger')}>
+		<Dropdown.Root open={isOpen} onOpenChange={setIsOpen}>
+			<Dropdown.Trigger className={cn(countOfNotifications ? 'notification-center-trigger' : null)}>
 				<Icon url='/icons/bell.svg' height={24} width={24} alt='campana' classNames='bell' />
 			</Dropdown.Trigger>
 			<Dropdown.Portal>
@@ -34,33 +30,35 @@ export function NotificationDropdown() {
 					{countOfNotifications ? (
 						<>
 							{/* Title */}
-							<Dropdown.Label className={style.title}>
-								<h3>{countOfNotifications}</h3>
-								<p>Notificaciones pendientes</p>
+							<Dropdown.Label asChild>
+								<h3 className={style.title}>Notificaciones pendientes</h3>
 							</Dropdown.Label>
 							{/* Notification Container */}
 							<Dropdown.Group className={style['notifications-items']}>
-								{first5Notifications.map(({ ticket, seen, title, description, timestamp }) => (
+								{first5Notifications.map(({ ticket, title, description, timestamp }) => (
 									<NotificationItem
 										key={ticket}
 										numberOfTicket={ticket}
-										disabled={seen}
 										title={title}
 										description={description}
 										timestamp={timestamp}
 									/>
 								))}
 							</Dropdown.Group>
-							{/* Actions */}
-							<Dropdown.Group className={style.actions}>
-								<button type='button' className={style['delete-all']}>
-									Borrar todo
-								</button>
-								<NotificationSheet />
-							</Dropdown.Group>
+							{/* NotificationSheet Trigger */}
+							{countOfNotifications > MAX_VISIBLE_NOTIFICATIONS ? (
+								<NotificationSheet setDropdownStatus={setIsOpen}>
+									<button type='button' className={style['see-all']}>
+										Ver {countOfNotifications - MAX_VISIBLE_NOTIFICATIONS} mas
+									</button>
+								</NotificationSheet>
+							) : null}
 						</>
 					) : (
-						<h1>Poner algo aqui</h1>
+						<div className={style['no-notification']}>
+							<Icon url='/icons/inbox.svg' alt='Inbox' classNames={style.inbox} />
+							<p>No hay notificaciones</p>
+						</div>
 					)}
 				</Dropdown.Content>
 			</Dropdown.Portal>
