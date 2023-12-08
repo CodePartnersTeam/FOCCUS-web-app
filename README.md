@@ -29,7 +29,7 @@ Las siguientes convenciones determinan el como debe escribirse codigo e interact
   Documentacion, titulos, descripciones, comentarios, commits, tasks, issues, discusiones y PRs.
 
 - #### **En Ingles:**
-  Todo lo que sea codigo como variables, constantes, funciones, etc.
+  Ramas de trabajo, ademas de todo lo que sea codigo como variables, constantes, funciones, etc.
 
 ### Procesos
 
