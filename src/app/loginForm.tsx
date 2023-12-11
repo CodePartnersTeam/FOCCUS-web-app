@@ -28,6 +28,7 @@ export default function LoginForm() {
 		setLoading(true)
 		await loginService(credentials)
 			.then(() => router.push(APPROUTES.HOME))
+			.then(() => toast.success(`Bienvenido ${credentials.username}`))
 			.catch(err => toast.error(err.message))
 			.finally(() => setLoading(false))
 	}
