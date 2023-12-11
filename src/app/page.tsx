@@ -11,7 +11,7 @@ export default function LoginPage() {
 				<blockquote>“Observa el mundo con ojos nuevos, enfocate en lo que realmente importa.”</blockquote>
 			</section>
 			<section className={style.right}>
-				<Image width={128} height={30} src='/images/logos/LogoFoccus.png' alt='Logo Foccus' />
+				<Image width={128} height={30} src='/images/logos/LogoFoccus.png' alt='Logo Foccus' className={style.logo} />
 				<LoginForm />
 			</section>
 		</main>
