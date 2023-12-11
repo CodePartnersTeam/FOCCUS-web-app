@@ -17,3 +17,56 @@
 	grid-template-columns: $cols;
 	gap: $space;
 }
+
+/* Mixin Font */
+/// @mixin font
+/// @descripcion Usar este mixin para definir font styles.
+///
+/// @param {string} $font-size - El tamaño de fuente (e.g., 1em).
+/// @param {color} $color - El color de fuente en formato HSL.
+/// @param {number} $font-weight - El peso de la fuente (e.g., 400, 700).
+/// @param {number} $line-height - La altura de linea.
+/// @param {string} $font-family - La font family.
+/// @param {string} $font-style - El estilo de fuente (e.g., normal, italic).
+/// @param {string} $font-variant - La variante de fuente (e.g., normal, small-caps).
+///
+/// @example
+///   .element {
+///     @include font(1em, hsl(0, 0, 20), 400, 1.5, 'Arial, sans-serif', normal, normal);
+///   }
+
+@mixin font(
+	$font-size: 1em,
+	$color: inherit,
+	$font-weight: 400,
+	$line-height: 1,
+	$font-family: inherit,
+	$font-style: normal,
+	$font-variant: normal
+) {
+	color: $color;
+	font-style: $font-style;
+	font-variant: $font-variant;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	line-height: $line-height;
+	font-family: $font-family;
+}
+
+/* Mixin Line Clamp */
+/// @mixin line-clamp
+/// @description Usar este mixin para definir el numero de lineas que un elemento debe mostrar.
+///
+/// @param {number} $-webkit-line-clamp - El numero de lineas a mostrar
+/// @param {string} $-webkit-box-orient - La orientación de la caja (e.g., vertical, horizontal).
+///
+/// @example
+///   .element-with-line-clamp {
+///     @include line-clamp(3, vertical);
+///   }
+@mixin line-clamp($-webkit-line-clamp: 3, $-webkit-box-orient: vertical) {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: $-webkit-box-orient;
+	-webkit-box-orient: $-webkit-box-orient;
+}
