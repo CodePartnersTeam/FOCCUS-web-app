@@ -1,5 +1,6 @@
 'use client'
 
+import { KeyWithValue } from '@/common/types'
 import { Icon } from '@components/Icon'
 import * as Tooltip from '@radix-ui/react-tooltip'
 import cn from 'classnames'
@@ -34,7 +35,7 @@ function CurrentPassword() {
 }
 
 function NewPassword() {
-	const [validations, setValidations] = useState({
+	const [validations, setValidations] = useState<KeyWithValue<boolean>>({
 		minLenght: false,
 		number: false,
 		mayusLetter: false,
