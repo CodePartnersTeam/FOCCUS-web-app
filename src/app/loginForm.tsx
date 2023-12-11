@@ -4,6 +4,7 @@
 import { APPROUTES } from '@/config/routes'
 import { loginService } from '@/features/Session/infrastructure'
 import { Credentials, credentialsDefaultValue } from '@/features/_shared/User'
+import { Password } from '@components/_Forms/Password'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
@@ -48,17 +49,7 @@ export default function LoginForm() {
 						onChange={changeCredentials}
 					/>
 				</label>
-				<label>
-					Ingrese su contraseña
-					<input
-						id='password'
-						type='password'
-						name='password'
-						placeholder='*******'
-						autoComplete='current-password'
-						onChange={changeCredentials}
-					/>
-				</label>
+				<Password type='current-password' />
 				<button type='submit'>{!loading ? 'Iniciar Sesion' : 'Cargando...'}</button>
 			</form>
 			<div className={s.actions}>
