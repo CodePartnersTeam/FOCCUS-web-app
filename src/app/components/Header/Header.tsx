@@ -48,7 +48,8 @@ export function Header() {
 			<div className={style['user-actions']}>
 				{/* Notification Center */}
 				<NotificationDropdown />
-				<Image width={128} height={30} src='/images/logos/LogoFoccus.png' alt='Logo Foccus' className={style.logo} />
+				{/* Logo Foccus */}
+				<Image width={128} height={24} src='/images/logos/LogoFoccus.png' alt='Logo Foccus' className={style.logo} />
 				{/* Dropdown User Actions */}
 				<Root>
 					<Trigger>
