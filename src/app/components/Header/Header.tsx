@@ -16,7 +16,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-import { Avatar } from '../Avatar'
 import { NAVIGATIONHEADER } from './Header.navigation'
 import { userActions } from './userActions'
 
@@ -49,10 +48,11 @@ export function Header() {
 			<div className={style['user-actions']}>
 				{/* Notification Center */}
 				<NotificationDropdown />
+				<Image width={128} height={30} src='/images/logos/LogoFoccus.png' alt='Logo Foccus' className={style.logo} />
 				{/* Dropdown User Actions */}
 				<Root>
 					<Trigger>
-						<Avatar src='/images/avatar_test.svg' size='md' name='Antonio Cabrales' />
+						<Image width={7} height={7} src='/icons/options.svg' alt='Antonio Cabrales' />
 					</Trigger>
 					<Content className={style.dropdown} sideOffset={5}>
 						<Title className={style.username}>{'{Nombre del usuario}'}</Title>

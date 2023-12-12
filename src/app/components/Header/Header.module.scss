@@ -38,6 +38,10 @@
 		align-items: center;
 		gap: 25px;
 
+		.logo {
+			height: fit-content;
+		}
+
 		.notification {
 			display: grid;
 			position: relative;
