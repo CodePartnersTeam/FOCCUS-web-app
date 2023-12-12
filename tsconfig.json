@@ -20,7 +20,7 @@
 			"@routes": ["src/config/routes"],
 			"@shared/*": ["src/features/_shared/*"],
 			"@styles/*": ["src/assets/styles/*"],
-			"@ui/*": ["src/app/components/*"]
+			"@components/*": ["src/app/components/*"]
 		},
 		"plugins": [
 			{

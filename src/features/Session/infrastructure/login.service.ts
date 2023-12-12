@@ -11,10 +11,12 @@ export async function loginService(credentials: Credentials) {
 	if (!credentialsIsValid(credentials)) {
 		throw new Error('Usuario o contraseña inválido')
 	}
+
 	try {
 		const { data: sessionDTO } = await axios.post(APIROUTES.LOGIN, credentials)
 		saveSessionInCookies(sessionAdapter(sessionDTO))
 		saveUserInLocalStorage(userAdapter(sessionDTO))
+		return sessionDTO
 	} catch (error: any) {
 		console.log(error)
 

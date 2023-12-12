@@ -3,7 +3,10 @@
 // TODO: Modularizar
 import { APPROUTES } from '@/config/routes'
 import { loginService } from '@/features/Session/infrastructure'
-import { Credentials, credentialsDefaultValue } from '@/features/_shared/User'
+import { SessionDTO } from '@/features/_shared/Session/domain'
+import { Credentials } from '@/features/_shared/User'
+import { Password } from '@components/_Forms/Password'
+import cn from 'classnames'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
@@ -11,34 +14,36 @@ import { toast } from 'sonner'
 import s from './login.module.scss'
 
 export default function LoginForm() {
-	const [credentials, setCredentials] = useState<Credentials>(credentialsDefaultValue)
 	const [error, setError] = useState(false)
 	const [loading, setLoading] = useState(false)
 
 	const router = useRouter()
 
-	function changeCredentials(e: React.ChangeEvent<HTMLInputElement>) {
-		e.preventDefault()
-		setError(false)
-		setCredentials(prevCredentials => ({ ...prevCredentials, [e.target.name]: e.target.value }))
-	}
-
 	async function submitCredentials(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault()
+
 		setLoading(true)
+		setError(false)
+
+		const { username, password } = e.target as HTMLFormElement
+
+		const credentials: Credentials = { username: username.value, password: password.value }
 		await loginService(credentials)
-			.then(() => {
+			.then((data: SessionDTO) => {
 				router.push(APPROUTES.HOME)
-				toast.success(`Bienvenido ${credentials.username}`)
+				toast.success(`Bienvenido de nuevo! ${data.userFound.name}`)
 			})
-			.catch(err => toast.error(err.message))
+			.catch(err => {
+				setError(true)
+				toast.error(err.message)
+			})
 			.finally(() => setLoading(false))
 	}
 
 	return (
 		<article className={s['form-container']}>
 			<h2>Inicia Sesion en FOCCUS</h2>
-			<form className={`${error ? s.error : undefined}`} onSubmit={submitCredentials}>
+			<form className={cn(error && s.error)} onSubmit={submitCredentials}>
 				<label>
 					Ingrese su usuario
 					<input
@@ -48,20 +53,9 @@ export default function LoginForm() {
 						autoFocus={true}
 						placeholder='oliviaaroud123'
 						autoComplete='username'
-						onChange={changeCredentials}
 					/>
 				</label>
-				<label>
-					Ingrese su contraseña
-					<input
-						id='password'
-						type='password'
-						name='password'
-						placeholder='*******'
-						autoComplete='current-password'
-						onChange={changeCredentials}
-					/>
-				</label>
+				<Password type='current-password' />
 				<button type='submit'>{!loading ? 'Iniciar Sesion' : 'Cargando...'}</button>
 			</form>
 			<div className={s.actions}>
