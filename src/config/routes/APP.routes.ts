@@ -5,5 +5,6 @@ export const APPROUTES: KeyWithValue<string> = {
 	HOME: '/vision general',
 	ORDERS: '/pedidos',
 	PRODUCTS: '/productos',
-	CLIENTS: '/clientes'
+	CLIENTS: '/clientes',
+	SELLS: '/ventas'
 }
