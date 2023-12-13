@@ -1,0 +1,5 @@
+theme: default
+shortcutIcon: public/images/logos/LogoFoccus.png
+groups: 
+  undefined: General
+dest: docs/sassdoc
