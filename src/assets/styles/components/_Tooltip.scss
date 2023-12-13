@@ -1,0 +1,20 @@
+.tooltip {
+	@include flex(column, nowrap, flex-start, center, 2px);
+
+	border: 1px solid hsla(0deg, 0%, 0%, 10%);
+	border-radius: 4px;
+	background: hsl(0deg, 0%, 100%);
+	padding: 0.5rem 0.75rem;
+	color: $color-black;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 0.875rem;
+	line-height: normal;
+	font-family: $font-montserrat;
+}
+
+.tooltip-arrow {
+	transform: translateY(-1px);
+	filter: drop-shadow(0 1px 0 hsla(0deg, 0%, 0%, 10%)) drop-shadow(0 2px 1px hsla(0deg, 0%, 0%, 10%));
+	color: $color-white;
+}
