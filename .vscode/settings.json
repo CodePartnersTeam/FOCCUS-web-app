@@ -33,5 +33,7 @@
 	"stylelint.snippet": ["css", "postcss", "scss", "sass"],
 	"stylelint.validate": ["css", "postcss", "scss", "sass"],
 	"workbench.tree.indent": 15,
-	"conventionalCommits.scopes": ["architecture"]
+	"conventionalCommits.scopes": ["architecture", "NotificationCenter"],
+	"conventionalCommits.lineBreak": "\\n",
+	"conventionalCommits.emojiFormat": "emoji"
 }
