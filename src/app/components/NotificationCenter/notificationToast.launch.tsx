@@ -13,16 +13,14 @@ export async function launchNotificacionsToast(notifications: Array<Notification
 
 	notifications.map(({ category, data }) =>
 		toast(<NotificationToast title={category} description={data.message} />, {
-			duration: 5000,
-			position: 'bottom-right'
+			duration: 5000
 		})
 	)
 
 	if (numberOfNotifications > 3) {
 		toast.info(`${numberOfNotifications} notificaiones nuevas`, {
 			icon: <Icon url='/icons/bell.svg' alt='campana' classNames='bell' />,
-			duration: 7500,
-			position: 'bottom-right'
+			duration: 7500
 		})
 	}
 }

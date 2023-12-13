@@ -3,5 +3,5 @@
 import { Toaster } from 'sonner'
 
 export function ToasterComponent() {
-	return <Toaster richColors closeButton visibleToasts={9} position='bottom-center' />
+	return <Toaster richColors closeButton visibleToasts={9} />
 }
