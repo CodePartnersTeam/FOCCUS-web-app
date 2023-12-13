@@ -2,7 +2,6 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-/* Mixin Flexbox */
 @mixin flex($direction, $wrap: nowrap, $justify, $align, $space: 0) {
 	display: flex;
 	flex-flow: $direction $wrap;
@@ -11,17 +10,13 @@
 	gap: $space;
 }
 
-/* Mixin Grid */
 @mixin grid($cols, $rows, $space: 0) {
 	display: grid;
 	grid-template-columns: $cols;
 	gap: $space;
 }
 
-/* Mixin Font */
-/// @mixin font
-/// @descripcion Usar este mixin para definir font styles.
-///
+/// Usar este mixin para definir font styles.
 /// @param {string} $font-size - El tamaño de fuente (e.g., 1em).
 /// @param {color} $color - El color de fuente en formato HSL.
 /// @param {number} $font-weight - El peso de la fuente (e.g., 400, 700).
@@ -29,7 +24,6 @@
 /// @param {string} $font-family - La font family.
 /// @param {string} $font-style - El estilo de fuente (e.g., normal, italic).
 /// @param {string} $font-variant - La variante de fuente (e.g., normal, small-caps).
-///
 /// @example
 ///   .element {
 ///     @include font(1em, hsl(0, 0, 20), 400, 1.5, 'Arial, sans-serif', normal, normal);
@@ -53,17 +47,14 @@
 	font-family: $font-family;
 }
 
-/* Mixin Line Clamp */
-/// @mixin line-clamp
-/// @description Usar este mixin para definir el numero de lineas que un elemento debe mostrar.
-///
+/// Usar este mixin para definir el numero de lineas que un elemento debe mostrar.
 /// @param {number} $-webkit-line-clamp - El numero de lineas a mostrar
 /// @param {string} $-webkit-box-orient - La orientación de la caja (e.g., vertical, horizontal).
-///
 /// @example
 ///   .element-with-line-clamp {
 ///     @include line-clamp(3, vertical);
 ///   }
+
 @mixin line-clamp($-webkit-line-clamp: 3, $-webkit-box-orient: vertical) {
 	display: -webkit-box;
 	overflow: hidden;
