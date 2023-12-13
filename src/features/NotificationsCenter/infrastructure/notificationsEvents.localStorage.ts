@@ -1,3 +1,5 @@
+'use client'
+
 import { NotificationEvent } from '../domain'
 
 const KEY = 'notificationscenter'
