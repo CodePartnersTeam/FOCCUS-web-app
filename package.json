@@ -53,7 +53,8 @@
 		"dev": "next dev",
 		"lint": "next lint",
 		"prepare": "husky install",
-		"start": "next start"
+		"start": "next start",
+		"start:sassdoc": "pnpx sassdoc src/assets/styles -v & pnpx http-server docs/sassdoc"
 	},
 	"version": "0.0.1"
 }
