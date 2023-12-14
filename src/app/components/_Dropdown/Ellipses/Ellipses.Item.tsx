@@ -8,7 +8,7 @@ interface EllipsesItemProps {
 	children: React.ReactNode
 }
 
-function EllipsesItem({ icon, service, children }: EllipsesItemProps) {
+export function EllipsesItem({ icon, service, children }: EllipsesItemProps) {
 	return (
 		<button className={style.item} onClick={service}>
 			<Image src={icon} alt={`${children}-img`} width={20} height={20} />
@@ -16,5 +16,3 @@ function EllipsesItem({ icon, service, children }: EllipsesItemProps) {
 		</button>
 	)
 }
-
-export default EllipsesItem

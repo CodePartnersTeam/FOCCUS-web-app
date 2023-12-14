@@ -6,16 +6,16 @@ import { Icon } from '../../Icon'
 import style from './Ellipses.module.scss'
 
 interface EllipsesProps {
-	triggerDirection: string
+	triggerDirection?: 'vertical' | 'horizontal'
 	children: React.ReactNode
 }
 
-function EllipsesDropdown({ children, triggerDirection }: EllipsesProps) {
+export function EllipsesDropdown({ children, triggerDirection = 'horizontal' }: EllipsesProps) {
 	return (
 		<>
 			<Root>
 				<Trigger className={`${style.trigger} ${style[`trigger-${triggerDirection}`]}`}>
-					<Icon url='/icons/options.svg' alt='Options' width={20} height={20} />
+					<Icon url='/icons/ellipses.svg' alt='Options' width={20} height={20} />
 				</Trigger>
 				<Content sideOffset={5} className={style.container}>
 					{children}
@@ -24,5 +24,3 @@ function EllipsesDropdown({ children, triggerDirection }: EllipsesProps) {
 		</>
 	)
 }
-
-export default EllipsesDropdown

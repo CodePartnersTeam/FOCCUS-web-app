@@ -8,7 +8,7 @@ interface EllipsesGroupProps {
 	children: React.ReactNode
 }
 
-function EllipsesGroup({ children, hasSeparator = true }: EllipsesGroupProps) {
+export function EllipsesGroup({ children, hasSeparator = true }: EllipsesGroupProps) {
 	return (
 		<>
 			<GroupActions className={style.group}>
@@ -18,5 +18,3 @@ function EllipsesGroup({ children, hasSeparator = true }: EllipsesGroupProps) {
 		</>
 	)
 }
-
-export default EllipsesGroup

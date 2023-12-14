@@ -17,9 +17,6 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 
 import { Avatar } from '../Avatar'
-import Ellipses from '../_Dropdown/Ellipses/Ellipses'
-import EllipsesGroup from '../_Dropdown/Ellipses/Ellipses.Group'
-import EllipsesItem from '../_Dropdown/Ellipses/Ellipses.Item'
 import { NAVIGATIONHEADER } from './Header.navigation'
 import { userActions } from './userActions'
 
@@ -70,31 +67,6 @@ export function Header() {
 						</GroupActions>
 					</Content>
 				</Root>
-				<Ellipses triggerDirection='vertical'>
-					<EllipsesGroup>
-						{/* {obj.map(({icon, service, label}) => ( */}
-						{/* <EllipsesItem icon={icon} service={service}>{label}</EllipsesItem> */}
-						{/* ))} */}
-						<EllipsesItem icon='/icons/bell.svg' service={() => console.log('click')}>
-							Prueba
-						</EllipsesItem>
-						<EllipsesItem icon='/icons/bell.svg' service={() => console.log('click')}>
-							Opcion2
-						</EllipsesItem>
-					</EllipsesGroup>
-
-					<EllipsesGroup>
-						<EllipsesItem icon='/icons/trash.svg' service={() => console.log('click')}>
-							Prueba2
-						</EllipsesItem>
-					</EllipsesGroup>
-
-					<EllipsesGroup hasSeparator={false}>
-						<EllipsesItem icon='/icons/trash.svg' service={() => console.log('click')}>
-							Prueba2
-						</EllipsesItem>
-					</EllipsesGroup>
-				</Ellipses>
 			</div>
 		</header>
 	) : null
