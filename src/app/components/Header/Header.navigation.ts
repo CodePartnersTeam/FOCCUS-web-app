@@ -1,6 +1,6 @@
 import { APPROUTES } from '@/config/routes'
 
-export const NAVIGATIONHEADER: any[] = [
+export const NAVIGATIONHEADER: string[] = [
 	APPROUTES.HOME,
 	APPROUTES.ORDERS,
 	APPROUTES.PRODUCTS,
