@@ -1,5 +1,5 @@
 export interface UserActions {
-	type: string
-	icon?: string
+	label: string
+	icon: string
 	service: Function
 }

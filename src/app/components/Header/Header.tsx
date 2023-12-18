@@ -2,20 +2,12 @@
 
 import { NotificationDropdown } from '@/app/components/NotificationCenter/components/Notification.Dropdown'
 import { APPROUTES } from '@/config/routes'
-import {
-	Item as Action,
-	Content,
-	Group as GroupActions,
-	Root,
-	Separator,
-	Label as Title,
-	Trigger
-} from '@radix-ui/react-dropdown-menu'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
+import { EllipsesDropdown, EllipsesGroup, EllipsesItem } from '../_Dropdown/Ellipses'
 import { NAVIGATIONHEADER } from './Header.navigation'
 import { userActions } from './userActions'
 
@@ -51,7 +43,16 @@ export function Header() {
 				{/* Logo Foccus */}
 				<Image width={128} height={24} src='/images/logos/LogoFoccus.png' alt='Logo Foccus' className={style.logo} />
 				{/* Dropdown User Actions */}
-				<Root>
+				<EllipsesDropdown triggerDirection='vertical'>
+					<EllipsesGroup>
+						{userActions.map(({ label, icon, service }) => (
+							<EllipsesItem key={label} icon={icon} service={() => service()}>
+								{label}
+							</EllipsesItem>
+						))}
+					</EllipsesGroup>
+				</EllipsesDropdown>
+				{/* <Root>
 					<Trigger>
 						<Image width={7} height={7} src='/icons/options.svg' alt='Antonio Cabrales' />
 					</Trigger>
@@ -67,7 +68,7 @@ export function Header() {
 							))}
 						</GroupActions>
 					</Content>
-				</Root>
+				</Root> */}
 			</div>
 		</header>
 	) : null
