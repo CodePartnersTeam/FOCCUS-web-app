@@ -52,23 +52,6 @@ export function Header() {
 						))}
 					</EllipsesGroup>
 				</EllipsesDropdown>
-				{/* <Root>
-					<Trigger>
-						<Image width={7} height={7} src='/icons/options.svg' alt='Antonio Cabrales' />
-					</Trigger>
-					<Content className={style.dropdown} sideOffset={5}>
-						<Title className={style.username}>{'{Nombre del usuario}'}</Title>
-						<Separator />
-						<GroupActions>
-							{userActions.map(({ type, icon, service }) => (
-								<Action key={type} className={style.item} onClick={event => service(event)}>
-									<Image width={24} height={24} src={`/icons/${icon}`} alt='Log out' className={style.icon} />
-									{type}
-								</Action>
-							))}
-						</GroupActions>
-					</Content>
-				</Root> */}
 			</div>
 		</header>
 	) : null
