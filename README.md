@@ -35,7 +35,8 @@ Las siguientes convenciones determinan el como debe escribirse codigo e interact
 
 Al momento de codear cualquier logica, vista o componente se debe seguir el siguiente proceso:
 
-![image](https://i.ibb.co/G302SwT/Step-by-step.png)
+![image](https://github.com/CodePartnersTeam/dashboard.foccus.co/assets/104526303/32945389-f72d-49f8-a13c-19bc6a987ffb)
+
 
 ### Extensiones Vs Code
 

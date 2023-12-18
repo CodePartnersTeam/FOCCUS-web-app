@@ -21,7 +21,7 @@ export function NotificationDropdown() {
 	useEffect(() => updateNotificationEvents(), [isOpen, updateNotificationEvents])
 
 	return (
-		<Dropdown.Root open={isOpen} onOpenChange={setIsOpen}>
+		<Dropdown.Root open={isOpen} onOpenChange={setIsOpen} modal={false}>
 			<Dropdown.Trigger className={cn(countOfNotifications ? 'notification-center-trigger' : null)}>
 				<Icon url='/icons/bell.svg' height={24} width={24} alt='campana' classNames='bell' />
 			</Dropdown.Trigger>
