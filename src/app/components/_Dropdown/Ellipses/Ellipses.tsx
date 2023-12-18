@@ -13,7 +13,7 @@ interface EllipsesProps {
 export function EllipsesDropdown({ children, triggerDirection = 'horizontal' }: EllipsesProps) {
 	return (
 		<>
-			<Root>
+			<Root modal={false}>
 				<Trigger className={`${style.trigger} ${style[`trigger-${triggerDirection}`]}`}>
 					<Icon url='/icons/ellipses.svg' alt='Options' width={20} height={20} classNames={style.icon} />
 				</Trigger>
