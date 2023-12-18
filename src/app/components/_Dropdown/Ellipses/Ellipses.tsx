@@ -15,7 +15,7 @@ export function EllipsesDropdown({ children, triggerDirection = 'horizontal' }: 
 		<>
 			<Root>
 				<Trigger className={`${style.trigger} ${style[`trigger-${triggerDirection}`]}`}>
-					<Icon url='/icons/ellipses.svg' alt='Options' width={20} height={20} />
+					<Icon url='/icons/ellipses.svg' alt='Options' width={20} height={20} classNames={style.icon} />
 				</Trigger>
 				<Content sideOffset={5} className={style.container}>
 					{children}
