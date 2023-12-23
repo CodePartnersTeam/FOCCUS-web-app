@@ -37,6 +37,8 @@
 		"eslint-plugin-hexagonal-architecture": "^1.0.3",
 		"husky": "^8.0.3",
 		"lint-staged": "^15.2.0",
+		"sassdoc": "^2.7.4",
+		"sassdoc-theme-herman": "^5.0.1",
 		"postcss": "^8.4.32",
 		"prettier": "^3.1.1",
 		"prettier-plugin-css-order": "^2.0.1",
@@ -46,7 +48,7 @@
 		"stylelint-plugin-defensive-css": "^0.10.2",
 		"typescript": "5.3.3"
 	},
-	"name": "dashboard.foccus.co",
+	"name": "foccus-web-app",
 	"private": true,
 	"scripts": {
 		"build": "next build",
@@ -54,7 +56,7 @@
 		"lint": "next lint",
 		"prepare": "husky install",
 		"start": "next start",
-		"start:sassdoc": "pnpx sassdoc src/assets/styles -v & pnpx http-server docs/sassdoc"
+		"start:sassdoc": "pnpm sassdoc src/assets/styles & pnpx http-server docs/sassdoc"
 	},
 	"version": "0.0.1"
 }
