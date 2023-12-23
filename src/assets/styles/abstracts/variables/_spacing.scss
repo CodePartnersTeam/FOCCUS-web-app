@@ -1,3 +1,29 @@
+/// Espacios predefinidos.
+///
+/// Estos espacios se utilizan para definir márgenes, rellenos y otras dimensiones
+/// en el diseño. Se proporcionan en diferentes tamaños para mayor flexibilidad.
+///
+/// @group system-design-spacing
+/// @name space-[0-1000]
+/// @type variables
+///
+/// @prop $space-0 [0] - Sin espacio (0).
+/// @prop $space-25 [2px] - Espacio de 2 píxeles.
+/// @prop $space-50 [4px] - Espacio de 4 píxeles.
+/// @prop $space-75 [6px] - Espacio de 6 píxeles.
+/// @prop $space-100 [8px] - Espacio de 0.5 rem.
+/// @prop $space-150 [12px] - Espacio de 0.75 rem.
+/// @prop $space-200 [16px] - Espacio de 1 rem.
+/// @prop $space-250 [20px] - Espacio de 1.25 rem.
+/// @prop $space-300 [24px] - Espacio de 1.5 rem.
+/// @prop $space-400 [32px] - Espacio de 2 rem.
+/// @prop $space-500 [40px] - Espacio de 2.5 rem.
+/// @prop $space-600 [48px] - Espacio de 3 rem.
+/// @prop $space-700 [56px] - Espacio de 3.5 rem.
+/// @prop $space-800 [64px] - Espacio de 4 rem.
+/// @prop $space-900 [72px] - Espacio de 4.5 rem.
+/// @prop $space-1000 [80px] - Espacio de 5 rem.
+///
 $space-0: 0;
 $space-0: 0;
 $space-25: 2px;
