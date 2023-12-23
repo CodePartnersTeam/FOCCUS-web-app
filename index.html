@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-herman="root">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>foccus-web-app Documentation</title>
+
+  <link href="assets/img/LogoFoccus.png" rel="shortcut icon">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/webpack/app_styles.min.css" />
+
+  
+
+  
+</head>
+<body data-herman="body">
+  <svg xmlns="http://www.w3.org/2000/svg" hidden>
+  <symbol id="icon-logo" viewBox="0 0 16 16">
+    <path d="M.2 8 0 7.8v-.2C.8 6.9 1.9 5.9 2.7 5l.4.3c-.5.8-1.1 1.6-1.8 2.3 1 1.2 1 1.3 1.7 2.4l-.4.3c-.4-.4-.5-.6-1-1C1 8.6 1.1 8.7.2 8zM13 10c.6-1.1.7-1.1 1.7-2.4-.6-.6-1.3-1.5-1.7-2.3l.3-.3c.8.8 1.8 1.8 2.7 2.6v.2l-.8.7c-.3.3-1.2 1.1-1.8 1.7L13 10z"/><path d="M2.6 13.1H3c.9 0 1.1-.2 1.1-1.4V4.2c0-1.1-.2-1.4-1.1-1.4h-.4v-.6h4.5v.7h-.3c-.9 0-1.1.2-1.1 1.4v3.2h4.6V4.2c0-1.1-.2-1.4-1.1-1.4h-.3v-.6h4.5v.7H13c-.9 0-1.1.2-1.1 1.4v7.5c0 1.1.2 1.4 1.1 1.4h.4v.7H8.9v-.7h.3c.9 0 1.1-.2 1.1-1.4V8.2H5.7v3.5c0 1.1.2 1.4 1.1 1.4h.3v.7H2.6v-.7z"/>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 28">
+    <path d="M24 21v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1v-2c0-.547.453-1 1-1h22c.547 0 1 .453 1 1zm0-8v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1v-2c0-.547.453-1 1-1h22c.547 0 1 .453 1 1zm0-8v2c0 .547-.453 1-1 1H1c-.547 0-1-.453-1-1V5c0-.547.453-1 1-1h22c.547 0 1 .453 1 1z"/>
+  </symbol>
+</svg>
+
+  <div data-region="app">
+    <header data-region="banner">
+      
+  <button data-nav-toggle data-toggle="button" aria-controls="nav" aria-pressed="false" type="button" data-toggle-synced="false">
+    
+  <svg data-icon="menu" data-icon-size="nav-icon" ><title>menu</title><use xlink:href="#icon-menu" />
+  </svg>
+
+  </button>
+
+
+      <div class="project-title">
+        <a href="index.html" rel="home" class="project-name">foccus-web-app</a>
+        
+          <span class="project-version">0.0.1</span>
+        
+      </div>
+    </header>
+
+    <div data-region="container">
+      
+  <nav data-region="nav" data-toggle="target" id="nav" data-target-id="nav" aria-expanded="false" data-auto-closing="false" data-auto-closing-on-any-click="false">
+    <form action="search.html">
+      <input type="text" name="q" placeholder="Search…" required minlength="3">
+    </form>
+
+    <div class="nav-subsection">
+      <h3 class="nav-home">
+        
+        <a href="index.html" data-nav="is-active">foccus-web-app</a>
+      </h3>
+
+      
+      
+    </div>
+
+    
+    <div class="nav-subsection">
+      <ul>
+  
+    <li class="nav-item">
+      <a href="undefined.html" data-nav="is-not-active">General</a>
+    </li>
+  
+            <li class="nav-subsection">
+              <h3 class="nav-title">System Design</h3>
+              <ul>
+                
+  
+    <li class="nav-item">
+      <a href="system-design-spacing.html" data-nav="is-not-active">Espaciados</a>
+    </li>
+  
+  
+    <li class="nav-item">
+      <a href="system-design-colors.html" data-nav="is-not-active">Colores</a>
+    </li>
+  
+  
+  
+  
+  </ul>
+            </li></ul>
+    </div>
+
+    
+    
+
+    
+      <aside class="footer-credit">
+        <a href="https://www.oddbird.net/herman/" class="footer-icon">
+          
+  <svg data-icon="logo" data-icon-size="footer-logo" ><use xlink:href="#icon-logo" />
+  </svg>
+
+        </a>
+        <span>
+          Documented with
+          <a href="https://www.oddbird.net/herman/" class="footer-link">
+            Herman
+          </a>
+        </span>
+        <span>
+          by
+          <a href="https://www.oddbird.net/" class="footer-link">
+            OddBird
+          </a>
+        </span>
+      </aside>
+    
+  </nav>
+
+
+      <main data-region="main">
+        
+
+        <div data-page="index">
+          
+  
+  
+
+  
+    <div class="text-block">
+      <h2 id="gestor-de-paquetes" tabindex="-1">Gestor de paquetes</h2>
+<p>Utilizamos <code>pnpm</code> como gestor de paquetes, si aun no lo tiene instalelo <a href="https://pnpm.io/es/installation">aqui<span class="widont">&nbsp;</span>↗️</a></p>
+<p>Consulte los scripts posibles lanzando en la terminal el comando <code>pnpm run</code></p>
+<h2 id="arquitectura" tabindex="-1">Arquitectura</h2>
+<p>La arquitectura que usamos en la aplicacion es <strong>AHSS 7-1</strong>, esta es una arquitectura pensada especificamente para NEXT JS con App Directory que encapsula principios<span class="widont">&nbsp;</span>como:</p>
+<ul>
+<li>SASS 7-1 Pattern</li>
+<li>Hexagonal Architecture</li>
+<li>Vertical Slice architecture</li>
+<li>Screaming Architecture</li>
+<li><em>entre otros…</em></li>
+</ul>
+<p>Consulte mas informacion sobre esta arquitectura <a href="https://github.com/devEstivenValencia/Architecure_AHSS_7-1">aqui<span class="widont">&nbsp;</span>↗️</a></p>
+<p><em>Extenderemos esto pronto…</em></p>
+<h2 id="convenciones-de-trabajo" tabindex="-1">Convenciones de trabajo</h2>
+<p>Las siguientes convenciones determinan el como debe escribirse codigo e interactuar con los compañeros mediante comentarios, Prs, Issues,<span class="widont">&nbsp;</span>etc.</p>
+<h3 id="-lenguaje" tabindex="-1">🌎 Lenguaje</h3>
+<ul>
+<li>
+<h4 id="en-espa-ol-" tabindex="-1"><strong>En Español:</strong></h4>
+<p>Documentacion, titulos, descripciones, comentarios, commits, tasks, issues, discusiones y<span class="widont">&nbsp;</span>PRs.</p>
+</li>
+<li>
+<h4 id="en-ingles-" tabindex="-1"><strong>En Ingles:</strong></h4>
+<p>Ramas de trabajo, ademas de todo lo que sea codigo como variables, constantes, funciones,<span class="widont">&nbsp;</span>etc.</p>
+</li>
+</ul>
+<h3 id="procesos" tabindex="-1">Procesos</h3>
+<p>Al momento de codear cualquier logica, vista o componente se debe seguir el siguiente<span class="widont">&nbsp;</span>proceso:</p>
+<p><img src="https://github.com/CodePartnersTeam/dashboard.foccus.co/assets/104526303/32945389-f72d-49f8-a13c-19bc6a987ffb" alt="image"></p>
+<h3 id="extensiones-vs-code" tabindex="-1">Extensiones Vs Code</h3>
+<p>Se han recomendado una serie de extensiones utiles para el desarrollo, ademas de otras que son necesarias u obligatorias para el correcto<span class="widont">&nbsp;</span>funcionamiento.</p>
+<h4 id="extensiones-obligatorias" tabindex="-1">Extensiones obligatorias</h4>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier ↗️ </a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">Eslint ↗️ </a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=mikehanson.auto-barrel">Auto Barrel ↗️ </a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint">stylelint ↗️ </a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">Better comments ↗️ </a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens">Error lens ↗️ </a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks">Bookmarks ↗️ </a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare">Live Share ↗️</a></li>
+</ul>
+<p>Puede encontrar la lista completa en el archivo <code>extensions.json</code> dentro de <code>.vscode</code>. Puede hacer caso omiso de aquellas extensiones que no se encuentren en la lista de <strong>extensiones obligatorias</strong>, sin embargo recomendamos instalarlas todas para una mejor<span class="widont">&nbsp;</span>experiencia.</p>
+<h3 id="configuracion-compartida-vs-code" tabindex="-1">Configuracion Compartida Vs<span class="widont">&nbsp;</span>Code</h3>
+<p>Cada Visual Studio Code puede ser unico y<span class="widont">&nbsp;</span>diferente.</p>
+<p>Sabemos que esto puede generar conflictos al hacer PP o Code Reviews por lo que hemos estandarizado una serie de configuraciones para que todos estemos casi casi en la misma compu y asi entendamos todo a la<span class="widont">&nbsp;</span>perfeccion.</p>
+<p>Esta configuracion se aplica automaticamente a Visual Studio Code y se encuentra en <code>settings.json</code> dentro de <code>.vscode</code></p>
+<h3 id="commits-" tabindex="-1">Commits:</h3>
+<p>Los commits deben seguir el conventional commit +<span class="widont">&nbsp;</span>gitmoji.</p>
+<p><a href="https://www.conventionalcommits.org/es/"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&amp;logoColor=white" alt="Conventional Commits"></a>
+<a href="https://gitmoji.dev"><img src="https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square" alt="Gitmoji"></a></p>
+<p>Con esto la estructura seria la<span class="widont">&nbsp;</span>siguiente:</p>
+<pre><code class="lang-TSX">prefijo(scope): :emoji: descripcion...
+
+descripcion extensa...
+
+referencias...
+</code></pre>
+<p><em>ejemplos</em></p>
+<pre><code class="lang-TSX">chore(koji): ⭕ Configuracion base para Koji CLI
+
+Configuramos Koji para usarlo como herramienta CLI en el proceso de commits
+
+&quot;re #1&quot;
+</code></pre>
+<h3 id="herramientas-para-commits" tabindex="-1">Herramientas para Commits</h3>
+<p>Para ayudarnos en este proceso de construccion de commits podemos apoyarnos de alguna de las siguientes 2<span class="widont">&nbsp;</span>herramientas:</p>
+<ol>
+<li>
+<p><strong>Koji:</strong> Herramienta de linea de<span class="widont">&nbsp;</span>comandos.</p>
+<p><strong>Instalacion:</strong></p>
+<p><code>curl -sS https://webinstall.dev/koji | bash</code></p>
+<blockquote>
+<p><em>Siga las instrucciones que aparezcan en la<span class="widont">&nbsp;</span>terminal</em></p>
+</blockquote>
+<p><strong>Uso:</strong></p>
+<p>Una vez instalado, ejecute en la terminal <code>koji</code> y vera la guia de terminal para crear<span class="widont">&nbsp;</span>commits.</p>
+<p>El archivo <code>.koji.toml</code> tiene la configuracion para<span class="widont">&nbsp;</span>CLI.</p>
+</li>
+<li>
+<p><strong>Conventional Commits Extension:</strong> Extension de Vs<span class="widont">&nbsp;</span>Code.</p>
+<p>Siga el siguiente articulo para instalar y aprender a usar la<span class="widont">&nbsp;</span>extension.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits">Link al articulo<span class="widont">&nbsp;</span>↗️</a></p>
+</li>
+</ol>
+<h2 id="convenciones-de-codigo" tabindex="-1">Convenciones de codigo</h2>
+<h3 id="estilos-de-la-aplicacion-css-" tabindex="-1">Estilos de la aplicacion ( CSS<span class="widont">&nbsp;</span>)</h3>
+<p>La siguiente lista especifica el estandar de formatos que pueden utilizarse para estilizar la<span class="widont">&nbsp;</span>aplicacion:</p>
+<ul>
+<li>Medidas pequeñas <code>px</code> (de 1 a max. 6 px) <a href="https://youtu.be/YglSzse9tEo">explicacion<span class="widont">&nbsp;</span>↗️</a></li>
+<li>Modelos de caja <code>rem</code> <a href="https://youtu.be/YglSzse9tEo">explicacion ↗️</a></li>
+<li>Tamaños de fuentes <code>em</code> <a href="https://youtu.be/YglSzse9tEo">explicacion ↗️</a></li>
+<li>Para colores <code>hsl</code> <a href="https://youtu.be/8nHhPa8JFJQ">explicacion ↗️</a></li>
+<li>Manipulacion del viewport <code>dvh dvw</code> <a href="https://acortar.link/atseOP">explicacion ↗️</a></li>
+</ul>
+<p>Puede extender mas su conocimiento de CSS con los siguientes videos <a href="https://youtube.com/playlist?list=PLhtkmF724qPf3PqXX3M_55-6Uzqb_StdY&amp;si=qQfV321hOjkpwrYH">🚀 CSS • De Noob a Arquitecto<span class="widont">&nbsp;</span>↗️</a></p>
+<h2 id="metodologias" tabindex="-1">Metodologias</h2>
+<h3 id="entidades" tabindex="-1">Entidades</h3>
+<p>Las entidades son la parte fundamental de la aplicacion, son lo que puede y no puede interactuar con nuestra aplicacion, da cumplimiento a las reglas y logica de<span class="widont">&nbsp;</span>negocio.</p>
+<p>Es por eso que desglosamos a las entidades en lo<span class="widont">&nbsp;</span>siguiente</p>
+<ol>
+<li>Esencia ( Types<span class="widont">&nbsp;</span>)</li>
+<li>Forma ( Default Values<span class="widont">&nbsp;</span>)</li>
+<li>Requerimientos ( Schema<span class="widont">&nbsp;</span>)</li>
+</ol>
+
+    </div>
+  
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="assets/webpack/runtime.min.js"></script>
+  <script type="text/javascript" src="assets/webpack/common.min.js"></script>
+  <script type="text/javascript" src="assets/webpack/app.min.js"></script>
+  
+</body>
+</html>
