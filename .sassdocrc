@@ -1,5 +1,16 @@
-theme: default
+theme: herman
+herman: 
+  displayColors: 
+    - hsl
 shortcutIcon: public/images/logos/LogoFoccus.png
 groups: 
   undefined: General
+  System Design:
+    system-design-spacing: Espaciados
+    system-design-colors: Colores
+    system-design-typographies: Tipografias
+    system-design-elevations: Elevaciones
+    system-design-corners: Esquinas y Radios
+    system-design-images: Imagenes
+
 dest: docs/sassdoc
